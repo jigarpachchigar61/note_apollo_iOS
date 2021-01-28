@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE525C375E30049A2A5 /* AppDelegate.swift */; };
+		7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE725C375E30049A2A5 /* SceneDelegate.swift */; };
+		7481CBEA25C375E30049A2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE925C375E30049A2A5 /* ViewController.swift */; };
+		7481CBED25C375E30049A2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBEB25C375E30049A2A5 /* Main.storyboard */; };
+		7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBEE25C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld */; };
+		7481CBF225C375E50049A2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBF125C375E50049A2A5 /* Assets.xcassets */; };
+		7481CBF525C375E50049A2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */; };
+		7481CC0025C375E50049A2A5 /* note_apollo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */; };
+		7481CC0B25C375E50049A2A5 /* note_apollo_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7481CBFC25C375E50049A2A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7481CBDA25C375E30049A2A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7481CBE125C375E30049A2A5;
+			remoteInfo = note_apollo_iOS;
+		};
+		7481CC0725C375E50049A2A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7481CBDA25C375E30049A2A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7481CBE125C375E30049A2A5;
+			remoteInfo = note_apollo_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7481CBE225C375E30049A2A5 /* note_apollo_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_apollo_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7481CBE525C375E30049A2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7481CBE725C375E30049A2A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7481CBE925C375E30049A2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7481CBEC25C375E30049A2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7481CBEF25C375E30049A2A5 /* note_apollo_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = note_apollo_iOS.xcdatamodel; sourceTree = "<group>"; };
+		7481CBF125C375E50049A2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7481CBF425C375E50049A2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7481CBF625C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7481CBFB25C375E50049A2A5 /* note_apollo_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = note_apollo_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = note_apollo_iOSTests.swift; sourceTree = "<group>"; };
+		7481CC0125C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7481CC0625C375E50049A2A5 /* note_apollo_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = note_apollo_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = note_apollo_iOSUITests.swift; sourceTree = "<group>"; };
+		7481CC0C25C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7481CBDF25C375E30049A2A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CBF825C375E50049A2A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CC0325C375E50049A2A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7481CBD925C375E30049A2A5 = {
+			isa = PBXGroup;
+			children = (
+				7481CBE425C375E30049A2A5 /* note_apollo_iOS */,
+				7481CBFE25C375E50049A2A5 /* note_apollo_iOSTests */,
+				7481CC0925C375E50049A2A5 /* note_apollo_iOSUITests */,
+				7481CBE325C375E30049A2A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7481CBE325C375E30049A2A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7481CBE225C375E30049A2A5 /* note_apollo_iOS.app */,
+				7481CBFB25C375E50049A2A5 /* note_apollo_iOSTests.xctest */,
+				7481CC0625C375E50049A2A5 /* note_apollo_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7481CBE425C375E30049A2A5 /* note_apollo_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7481CBE525C375E30049A2A5 /* AppDelegate.swift */,
+				7481CBE725C375E30049A2A5 /* SceneDelegate.swift */,
+				7481CBE925C375E30049A2A5 /* ViewController.swift */,
+				7481CBEB25C375E30049A2A5 /* Main.storyboard */,
+				7481CBF125C375E50049A2A5 /* Assets.xcassets */,
+				7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */,
+				7481CBF625C375E50049A2A5 /* Info.plist */,
+				7481CBEE25C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld */,
+			);
+			path = note_apollo_iOS;
+			sourceTree = "<group>";
+		};
+		7481CBFE25C375E50049A2A5 /* note_apollo_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */,
+				7481CC0125C375E50049A2A5 /* Info.plist */,
+			);
+			path = note_apollo_iOSTests;
+			sourceTree = "<group>";
+		};
+		7481CC0925C375E50049A2A5 /* note_apollo_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */,
+				7481CC0C25C375E50049A2A5 /* Info.plist */,
+			);
+			path = note_apollo_iOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7481CBE125C375E30049A2A5 /* note_apollo_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7481CC0F25C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOS" */;
+			buildPhases = (
+				7481CBDE25C375E30049A2A5 /* Sources */,
+				7481CBDF25C375E30049A2A5 /* Frameworks */,
+				7481CBE025C375E30049A2A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = note_apollo_iOS;
+			productName = note_apollo_iOS;
+			productReference = 7481CBE225C375E30049A2A5 /* note_apollo_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7481CBFA25C375E50049A2A5 /* note_apollo_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7481CC1225C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOSTests" */;
+			buildPhases = (
+				7481CBF725C375E50049A2A5 /* Sources */,
+				7481CBF825C375E50049A2A5 /* Frameworks */,
+				7481CBF925C375E50049A2A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7481CBFD25C375E50049A2A5 /* PBXTargetDependency */,
+			);
+			name = note_apollo_iOSTests;
+			productName = note_apollo_iOSTests;
+			productReference = 7481CBFB25C375E50049A2A5 /* note_apollo_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7481CC0525C375E50049A2A5 /* note_apollo_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7481CC1525C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOSUITests" */;
+			buildPhases = (
+				7481CC0225C375E50049A2A5 /* Sources */,
+				7481CC0325C375E50049A2A5 /* Frameworks */,
+				7481CC0425C375E50049A2A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7481CC0825C375E50049A2A5 /* PBXTargetDependency */,
+			);
+			name = note_apollo_iOSUITests;
+			productName = note_apollo_iOSUITests;
+			productReference = 7481CC0625C375E50049A2A5 /* note_apollo_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7481CBDA25C375E30049A2A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					7481CBE125C375E30049A2A5 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					7481CBFA25C375E50049A2A5 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 7481CBE125C375E30049A2A5;
+					};
+					7481CC0525C375E50049A2A5 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 7481CBE125C375E30049A2A5;
+					};
+				};
+			};
+			buildConfigurationList = 7481CBDD25C375E30049A2A5 /* Build configuration list for PBXProject "note_apollo_iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7481CBD925C375E30049A2A5;
+			productRefGroup = 7481CBE325C375E30049A2A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7481CBE125C375E30049A2A5 /* note_apollo_iOS */,
+				7481CBFA25C375E50049A2A5 /* note_apollo_iOSTests */,
+				7481CC0525C375E50049A2A5 /* note_apollo_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7481CBE025C375E30049A2A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7481CBF525C375E50049A2A5 /* LaunchScreen.storyboard in Resources */,
+				7481CBF225C375E50049A2A5 /* Assets.xcassets in Resources */,
+				7481CBED25C375E30049A2A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CBF925C375E50049A2A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CC0425C375E50049A2A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7481CBDE25C375E30049A2A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7481CBEA25C375E30049A2A5 /* ViewController.swift in Sources */,
+				7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */,
+				7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */,
+				7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CBF725C375E50049A2A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7481CC0025C375E50049A2A5 /* note_apollo_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7481CC0225C375E50049A2A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7481CC0B25C375E50049A2A5 /* note_apollo_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7481CBFD25C375E50049A2A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7481CBE125C375E30049A2A5 /* note_apollo_iOS */;
+			targetProxy = 7481CBFC25C375E50049A2A5 /* PBXContainerItemProxy */;
+		};
+		7481CC0825C375E50049A2A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7481CBE125C375E30049A2A5 /* note_apollo_iOS */;
+			targetProxy = 7481CC0725C375E50049A2A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7481CBEB25C375E30049A2A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7481CBEC25C375E30049A2A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7481CBF425C375E50049A2A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7481CC0D25C375E50049A2A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7481CC0E25C375E50049A2A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7481CC1025C375E50049A2A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7481CC1125C375E50049A2A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7481CC1325C375E50049A2A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/note_apollo_iOS.app/note_apollo_iOS";
+			};
+			name = Debug;
+		};
+		7481CC1425C375E50049A2A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/note_apollo_iOS.app/note_apollo_iOS";
+			};
+			name = Release;
+		};
+		7481CC1625C375E50049A2A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = note_apollo_iOS;
+			};
+			name = Debug;
+		};
+		7481CC1725C375E50049A2A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = note_apollo_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jigar.note-apollo-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = note_apollo_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7481CBDD25C375E30049A2A5 /* Build configuration list for PBXProject "note_apollo_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7481CC0D25C375E50049A2A5 /* Debug */,
+				7481CC0E25C375E50049A2A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7481CC0F25C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7481CC1025C375E50049A2A5 /* Debug */,
+				7481CC1125C375E50049A2A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7481CC1225C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7481CC1325C375E50049A2A5 /* Debug */,
+				7481CC1425C375E50049A2A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7481CC1525C375E50049A2A5 /* Build configuration list for PBXNativeTarget "note_apollo_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7481CC1625C375E50049A2A5 /* Debug */,
+				7481CC1725C375E50049A2A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7481CBEE25C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7481CBEF25C375E30049A2A5 /* note_apollo_iOS.xcdatamodel */,
+			);
+			currentVersion = 7481CBEF25C375E30049A2A5 /* note_apollo_iOS.xcdatamodel */;
+			path = note_apollo_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7481CBDA25C375E30049A2A5 /* Project object */;
+}
