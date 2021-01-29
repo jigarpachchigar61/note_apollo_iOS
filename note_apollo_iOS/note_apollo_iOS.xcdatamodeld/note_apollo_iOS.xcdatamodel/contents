@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="noteAudio" optional="YES" attributeType="Binary"/>
+        <attribute name="noteDescription" optional="YES" attributeType="String"/>
+        <attribute name="noteImage" optional="YES" attributeType="Binary"/>
+        <attribute name="noteLocation" optional="YES" attributeType="String"/>
+        <attribute name="noteLocLat" optional="YES" attributeType="String"/>
+        <attribute name="noteLocLong" optional="YES" attributeType="String"/>
+        <attribute name="noteName" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Note" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
 </model>
