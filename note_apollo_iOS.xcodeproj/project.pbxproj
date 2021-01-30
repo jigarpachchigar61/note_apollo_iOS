@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743DEBA425C4708700E73565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743DEBA225C4708700E73565 /* LaunchScreen.storyboard */; };
+		743DEBA525C4708700E73565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743DEBA325C4708700E73565 /* Main.storyboard */; };
+		743DEBAB25C470F400E73565 /* apolloTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DEBAA25C470F400E73565 /* apolloTVCell.swift */; };
+		743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DEBB025C4714A00E73565 /* apolloNoteVC.swift */; };
+		743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743DEBB125C4714A00E73565 /* apolloNoteTVC.swift */; };
 		7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE525C375E30049A2A5 /* AppDelegate.swift */; };
 		7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE725C375E30049A2A5 /* SceneDelegate.swift */; };
-		7481CBEA25C375E30049A2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBE925C375E30049A2A5 /* ViewController.swift */; };
-		7481CBED25C375E30049A2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBEB25C375E30049A2A5 /* Main.storyboard */; };
 		7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBEE25C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld */; };
-		7481CBF225C375E50049A2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBF125C375E50049A2A5 /* Assets.xcassets */; };
-		7481CBF525C375E50049A2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */; };
 		7481CC0025C375E50049A2A5 /* note_apollo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */; };
 		7481CC0B25C375E50049A2A5 /* note_apollo_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */; };
+		A3E0543A25C47DB900178CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E0543925C47DB900178CAC /* Assets.xcassets */; };
+		A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */; };
+		A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		743DEBA225C4708700E73565 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		743DEBA325C4708700E73565 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		743DEBAA25C470F400E73565 /* apolloTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apolloTVCell.swift; sourceTree = "<group>"; };
+		743DEBB025C4714A00E73565 /* apolloNoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apolloNoteVC.swift; sourceTree = "<group>"; };
+		743DEBB125C4714A00E73565 /* apolloNoteTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apolloNoteTVC.swift; sourceTree = "<group>"; };
 		7481CBE225C375E30049A2A5 /* note_apollo_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_apollo_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7481CBE525C375E30049A2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7481CBE725C375E30049A2A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7481CBE925C375E30049A2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7481CBEC25C375E30049A2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7481CBEF25C375E30049A2A5 /* note_apollo_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = note_apollo_iOS.xcdatamodel; sourceTree = "<group>"; };
-		7481CBF125C375E50049A2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7481CBF425C375E50049A2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7481CBF625C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7481CBFB25C375E50049A2A5 /* note_apollo_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = note_apollo_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = note_apollo_iOSTests.swift; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		7481CC0625C375E50049A2A5 /* note_apollo_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = note_apollo_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = note_apollo_iOSUITests.swift; sourceTree = "<group>"; };
 		7481CC0C25C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3E0543925C47DB900178CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +86,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		743DEB9E25C4703600E73565 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				743DEBA225C4708700E73565 /* LaunchScreen.storyboard */,
+				743DEBA325C4708700E73565 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		743DEBA925C470BE00E73565 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				743DEBAA25C470F400E73565 /* apolloTVCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		743DEBAF25C4711D00E73565 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				743DEBB125C4714A00E73565 /* apolloNoteTVC.swift */,
+				743DEBB025C4714A00E73565 /* apolloNoteVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		7481CBD925C375E30049A2A5 = {
 			isa = PBXGroup;
 			children = (
+				A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */,
+				A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */,
+				743DEBAF25C4711D00E73565 /* ViewController */,
+				743DEBA925C470BE00E73565 /* CustomCell */,
+				743DEB9E25C4703600E73565 /* Storyboard */,
 				7481CBE425C375E30049A2A5 /* note_apollo_iOS */,
 				7481CBFE25C375E50049A2A5 /* note_apollo_iOSTests */,
 				7481CC0925C375E50049A2A5 /* note_apollo_iOSUITests */,
@@ -103,10 +142,7 @@
 			children = (
 				7481CBE525C375E30049A2A5 /* AppDelegate.swift */,
 				7481CBE725C375E30049A2A5 /* SceneDelegate.swift */,
-				7481CBE925C375E30049A2A5 /* ViewController.swift */,
-				7481CBEB25C375E30049A2A5 /* Main.storyboard */,
-				7481CBF125C375E50049A2A5 /* Assets.xcassets */,
-				7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */,
+				A3E0543925C47DB900178CAC /* Assets.xcassets */,
 				7481CBF625C375E50049A2A5 /* Info.plist */,
 				7481CBEE25C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld */,
 			);
@@ -234,9 +270,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7481CBF525C375E50049A2A5 /* LaunchScreen.storyboard in Resources */,
-				7481CBF225C375E50049A2A5 /* Assets.xcassets in Resources */,
-				7481CBED25C375E30049A2A5 /* Main.storyboard in Resources */,
+				743DEBA525C4708700E73565 /* Main.storyboard in Resources */,
+				A3E0543A25C47DB900178CAC /* Assets.xcassets in Resources */,
+				743DEBA425C4708700E73565 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7481CBEA25C375E30049A2A5 /* ViewController.swift in Sources */,
+				743DEBAB25C470F400E73565 /* apolloTVCell.swift in Sources */,
+				A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */,
+				A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */,
+				743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */,
+				743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */,
 				7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */,
 				7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */,
 				7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */,
@@ -298,25 +338,6 @@
 			targetProxy = 7481CC0725C375E50049A2A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7481CBEB25C375E30049A2A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7481CBEC25C375E30049A2A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7481CBF325C375E50049A2A5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7481CBF425C375E50049A2A5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7481CC0D25C375E50049A2A5 /* Debug */ = {
@@ -601,6 +622,7 @@
 			currentVersion = 7481CBEF25C375E30049A2A5 /* note_apollo_iOS.xcdatamodel */;
 			path = note_apollo_iOS.xcdatamodeld;
 			sourceTree = "<group>";
+			usesTabs = 0;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
