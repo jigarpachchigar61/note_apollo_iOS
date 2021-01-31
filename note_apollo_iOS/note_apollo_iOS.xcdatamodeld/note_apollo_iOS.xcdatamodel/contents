@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Note" representedClassName="Note" syncable="YES">
-        <attribute name="noteAudio" optional="YES" attributeType="Binary"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="noteAudio" optional="YES" attributeType="String"/>
         <attribute name="noteDescription" optional="YES" attributeType="String"/>
         <attribute name="noteImage" optional="YES" attributeType="Binary"/>
+        <attribute name="noteLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="noteLocation" optional="YES" attributeType="String"/>
-        <attribute name="noteLocLat" optional="YES" attributeType="String"/>
-        <attribute name="noteLocLong" optional="YES" attributeType="String"/>
+        <attribute name="noteLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="noteName" optional="YES" attributeType="String"/>
     </entity>
     <elements>

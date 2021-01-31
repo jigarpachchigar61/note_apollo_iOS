@@ -33,6 +33,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var locationManager: CLLocationManager!
     var noteLocationPlace: String = "" {
         didSet{
+            note?.noteAudio
             self.notesLocation.text = "Location: " + noteLocationPlace
         }
     }
@@ -317,18 +318,19 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         }
     }
     
-    
     @IBAction func audioRecordClicked(_ sender: Any) {
-        addBottomSheetView()
+        addBottomSheetView(note?.noteAudio ?? "", note?.noteAudio == nil)
     }
     
-    func addBottomSheetView() {
+    func addBottomSheetView(_ filename: String, _ newRecord: Bool) {
         // 1- Init bottomSheetVC
 //        let bottomSheetVC = AudioViewController()
         
         let bottomSheetVC:AudioViewController =
         self.storyboard!.instantiateViewController(withIdentifier: "AudioViewController") as!
             AudioViewController
+        bottomSheetVC.fileName = filename
+        bottomSheetVC.newRecord = newRecord
 
         // 2- Add bottomSheetVC as a child view
         self.addChild(bottomSheetVC)

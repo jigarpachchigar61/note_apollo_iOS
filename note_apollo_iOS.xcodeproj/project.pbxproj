@@ -18,8 +18,6 @@
 		7481CC0025C375E50049A2A5 /* note_apollo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBFF25C375E50049A2A5 /* note_apollo_iOSTests.swift */; };
 		7481CC0B25C375E50049A2A5 /* note_apollo_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */; };
 		A3E0543A25C47DB900178CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E0543925C47DB900178CAC /* Assets.xcassets */; };
-		A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */; };
-		A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */; };
 		C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */; };
 		C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50025C6E4F500171033 /* LocationViewController.swift */; };
 		C8EAB50D25C7292600171033 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50C25C7292600171033 /* LocationPlace.swift */; };
@@ -60,8 +58,6 @@
 		7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = note_apollo_iOSUITests.swift; sourceTree = "<group>"; };
 		7481CC0C25C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E0543925C47DB900178CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		C8EAB50025C6E4F500171033 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C8EAB50C25C7292600171033 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				C8EAB50B25C7291200171033 /* extension */,
-				A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */,
-				A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */,
 				743DEBAF25C4711D00E73565 /* ViewController */,
 				743DEBA925C470BE00E73565 /* CustomCell */,
 				743DEB9E25C4703600E73565 /* Storyboard */,
@@ -315,8 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				743DEBAB25C470F400E73565 /* apolloTVCell.swift in Sources */,
-				A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */,
-				A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */,
 				743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */,
 				743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */,
 				C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */,

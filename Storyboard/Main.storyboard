@@ -357,6 +357,7 @@
                     <connections>
                         <outlet property="playbackButton" destination="8cy-ky-SrN" id="G44-7p-guu"/>
                         <outlet property="recordButton" destination="J86-dP-a1F" id="80f-qT-gXB"/>
+                        <outlet property="seekBar" destination="LrF-zP-0AJ" id="j6e-Ml-387"/>
                         <outlet property="txtTimer" destination="Txn-6r-q4k" id="2gF-jS-8ms"/>
                     </connections>
                 </viewController>

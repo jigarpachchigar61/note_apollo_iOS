@@ -13,17 +13,22 @@ class AudioViewController: UIViewController {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
+    var timer = Timer()
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playbackButton: UIButton!
     @IBOutlet weak var txtTimer: UITextField!
-    @IBOutlet weak var txtSeekBar: UISlider!
+    @IBOutlet weak var seekBar: UISlider!
     
     var fileName: String!
+    var newRecord: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        initRecord(fileName: "dummy")
+        initRecord()
+        if !newRecord {
+            initPlayback()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +61,7 @@ class AudioViewController: UIViewController {
 
 extension AudioViewController: AVAudioRecorderDelegate{
     
-    func initRecord(fileName: String){
-        self.fileName = fileName
+    func initRecord(){
         recordingSession = AVAudioSession.sharedInstance()
         do {
             try self.recordingSession.setCategory(.playAndRecord, mode: .default)
@@ -76,19 +80,18 @@ extension AudioViewController: AVAudioRecorderDelegate{
         }
     }
     
+    func loadRecordingUI(){
+        seekBar.isHidden = false
+        playbackButton.isHidden = true
+        seekBar.isHidden = true
+    }
+    
     func recordProblem(){
+        playbackButton.isHidden = true
+        seekBar.isHidden = true
         let alert = UIAlertController(title: "Error", message: "Something went wrong with recording controller. Please try again.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in }))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func loadRecordingUI() {
-//        recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 128, height: 64))
-//        recordButton.setTitle("Tap to Record", for: .normal)
-//        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-//        recordButton.backgroundColor = .blue
-//        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-//        view.addSubview(recordButton)
     }
     
     @objc func recordTapped() {
@@ -131,20 +134,45 @@ extension AudioViewController: AVAudioRecorderDelegate{
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
+            playbackButton.isHidden = false
+            seekBar.isHidden = false
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             recordProblem()
         }
     }
     
-    func playRecording(){
+    func initPlayback(){
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName + ".m4a")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-            audioPlayer.play()
+            playbackButton.setTitle("Pause", for:.normal)
+            seekBar.isHidden = false
+            seekBar.maximumValue = Float(audioPlayer.duration)
         } catch {
             playbackProblem()
         }
+    }
+    
+    func playBackTapped() {
+        if !audioPlayer.isPlaying{
+            playbackButton.setTitle("Pause", for:.normal)
+            audioPlayer.play()
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats:true)
+        } else {
+            playbackButton.setTitle("Play Record", for:.normal)
+            audioPlayer.pause()
+            timer.invalidate()
+        }
+    }
+    
+    // update scrubber based on player current time
+    @objc func updateScrubber() {
+        seekBar.value = Float(audioPlayer.currentTime)
+    }
+    
+    @IBAction func scrubberMoved(_ sender: UISlider) {
+        audioPlayer.currentTime = TimeInterval(seekBar.value)
     }
     
     func playbackProblem(){
