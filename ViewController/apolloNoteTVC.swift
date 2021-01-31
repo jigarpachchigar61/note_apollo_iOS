@@ -11,22 +11,45 @@ import CoreData
 
 class apolloNoteTVC: UITableViewController {
 
+
     var notesArr = [Note]()
     
+    let searchController = UISearchController(searchResultsController: nil)
+
     var managedObjectContext: NSManagedObjectContext? {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveNotes()
+        
         self.navigationController?.navigationBar.tintColor = .gray
         tableView.delegate = self
         tableView.dataSource = self
         // Styles
         self.tableView.backgroundColor = UIColor(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        
+        self.refreshControl = UIRefreshControl()
+
+
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl!) // not required when using UITableViewController
     }
 
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
+    
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         retrieveNotes()
@@ -71,8 +94,18 @@ class apolloNoteTVC: UITableViewController {
         
     }
     
+    @objc func refresh(sender:AnyObject) {
+       // Code to refresh table view
+
+        self.refreshControl!.endRefreshing()
+    }
+    
+    
+
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "                    ") { (action, indexPath) in
+        
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "  ") { (action, indexPath) in
             
             let note = self.notesArr[indexPath.row]
             context.delete(note)
@@ -156,4 +189,10 @@ class apolloNoteTVC: UITableViewController {
 
     }
 
+}
+
+extension apolloNoteTVC: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    // TODO
+  }
 }

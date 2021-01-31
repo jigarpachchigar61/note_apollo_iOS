@@ -34,6 +34,10 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var indexPath: Int?
     
     
+    var refreshControl = UIRefreshControl()
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +79,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
 
     }
 
-   
     
     // Check Image Button Press
     @IBAction func ChkImgBtnPress(_ sender: Any) {
@@ -252,16 +255,17 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     
     //MARK: - Check Finish Image Media
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.dismiss(animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
+                    self.noteImageView.image = image
         
-        if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
-            self.noteImageView.image = image
-            
-        }
+                }
+        
+                self.dismiss(animated: true, completion: nil)
+
     }
-    
-    
+
+
     //MARK: - note text edit
     
     func textViewDidBeginEditing(_ textView: UITextView) {

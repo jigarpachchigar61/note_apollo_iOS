@@ -37,7 +37,7 @@ class apolloTVCell: UITableViewCell {
     
     func configureCell(note: Note) {
         
-        self.noteNameLabel.text = note.noteName?.uppercased()
+        self.noteNameLabel.text = note.noteName?.lowercased()
         self.noteDescriptionLabel.text = note.noteDescription
         
         self.noteImageView.image = UIImage(data: note.noteImage! as Data)
