@@ -22,6 +22,7 @@
 		A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */; };
 		C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */; };
 		C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50025C6E4F500171033 /* LocationViewController.swift */; };
+		C8EAB50D25C7292600171033 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50C25C7292600171033 /* LocationPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		C8EAB50025C6E4F500171033 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		C8EAB50C25C7292600171033 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		7481CBD925C375E30049A2A5 = {
 			isa = PBXGroup;
 			children = (
+				C8EAB50B25C7291200171033 /* extension */,
 				A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */,
 				A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */,
 				743DEBAF25C4711D00E73565 /* ViewController */,
@@ -171,6 +174,14 @@
 				7481CC0C25C375E50049A2A5 /* Info.plist */,
 			);
 			path = note_apollo_iOSUITests;
+			sourceTree = "<group>";
+		};
+		C8EAB50B25C7291200171033 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				C8EAB50C25C7292600171033 /* LocationPlace.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 				C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */,
 				C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */,
 				7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */,
+				C8EAB50D25C7292600171033 /* LocationPlace.swift in Sources */,
 				7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */,
 				7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */,
 			);

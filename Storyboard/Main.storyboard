@@ -187,8 +187,13 @@
                                     <constraint firstItem="ziH-Jl-oSJ" firstAttribute="centerX" secondItem="8aL-eO-G96" secondAttribute="centerX" id="zp6-Uw-VP3"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-za-WpB">
+                                <rect key="frame" x="16" y="415" width="288" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-Dw-Gcu">
-                                <rect key="frame" x="104.5" y="422" width="111" height="35"/>
+                                <rect key="frame" x="104.5" y="457" width="111" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8f-Eg-sXv">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -217,14 +222,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="B2L-za-WpB" firstAttribute="top" secondItem="8aL-eO-G96" secondAttribute="bottom" constant="8" id="62G-0q-qPo"/>
                             <constraint firstItem="22L-HK-LAt" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="7hV-OI-hRR"/>
                             <constraint firstAttribute="trailing" secondItem="8aL-eO-G96" secondAttribute="trailing" constant="8" id="9bX-vV-UW6"/>
                             <constraint firstItem="8aL-eO-G96" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="JKS-0D-872"/>
                             <constraint firstItem="7pZ-Dw-Gcu" firstAttribute="centerX" secondItem="8aL-eO-G96" secondAttribute="centerX" id="JMp-I9-eYY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B2L-za-WpB" secondAttribute="trailing" id="KS6-Co-fWq"/>
                             <constraint firstItem="8aL-eO-G96" firstAttribute="top" secondItem="22L-HK-LAt" secondAttribute="bottom" constant="9" id="Uu9-Dd-6Kj"/>
                             <constraint firstAttribute="trailing" secondItem="22L-HK-LAt" secondAttribute="trailing" constant="8" id="Xq5-ah-HIK"/>
+                            <constraint firstItem="7pZ-Dw-Gcu" firstAttribute="top" secondItem="B2L-za-WpB" secondAttribute="bottom" constant="8" id="Ywg-vj-qzM"/>
                             <constraint firstItem="22L-HK-LAt" firstAttribute="top" secondItem="l3a-EF-rTW" secondAttribute="bottom" constant="8" id="oYK-8I-KeU"/>
-                            <constraint firstItem="7pZ-Dw-Gcu" firstAttribute="top" secondItem="8aL-eO-G96" secondAttribute="bottom" constant="15" id="umn-g4-boL"/>
+                            <constraint firstItem="B2L-za-WpB" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leadingMargin" id="qzm-Wu-7GJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note Details" id="SvL-sc-52y">
@@ -244,6 +252,7 @@
                         <outlet property="notesDesc" destination="uTK-De-Rif" id="Jpp-RL-hqI"/>
                         <outlet property="notesDetail" destination="22L-HK-LAt" id="CUS-BY-iL5"/>
                         <outlet property="notesImgView" destination="8aL-eO-G96" id="16d-V4-iT0"/>
+                        <outlet property="notesLocation" destination="B2L-za-WpB" id="mr6-Mw-ved"/>
                         <outlet property="notesTitle" destination="RhL-T5-vBj" id="FH6-4Z-Xat"/>
                     </connections>
                 </viewController>

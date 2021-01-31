@@ -17,6 +17,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     @IBOutlet weak var notesDetail: UIView!
     @IBOutlet weak var noteImageView: UIImageView!
     @IBOutlet weak var notesImgView: UIView!
+    @IBOutlet weak var notesLocation: UITextField!
     
     
     var managedObjectContext: NSManagedObjectContext? {
@@ -30,11 +31,31 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var indexPath: Int?
     
     var locationManager: CLLocationManager!
-    var noteLocation: CLLocationCoordinate2D!
+    var noteLocationPlace: String = "" {
+        didSet{
+            self.notesLocation.text = "Location: " + noteLocationPlace
+        }
+    }
+    var noteLocation: CLLocationCoordinate2D!{
+        didSet{
+            let location = CLLocation(latitude: noteLocation.latitude, longitude: noteLocation.longitude)
+            location.placemark { placemark, error in
+                guard let placemark = placemark else {
+                    print("Error:", error ?? "nil")
+                    return
+                }
+                self.noteLocationPlace = placemark.postalAddressFormatted ?? ""
+                
+            }
+        }
+    }
     
     var refreshControl = UIRefreshControl()
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+            addBottomSheetView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +98,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         notesTitle.bottomBorder()
         
     }
-    
     
     // Check Image Button Press
     @IBAction func ChkImgBtnPress(_ sender: Any) {
@@ -301,6 +321,22 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             destination.noteLocation = self.noteLocation
         }
     }
+    
+    func addBottomSheetView() {
+        // 1- Init bottomSheetVC
+        let bottomSheetVC = AudioViewController()
+
+        // 2- Add bottomSheetVC as a child view
+        self.addChild(bottomSheetVC)
+        self.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: self)
+
+        // 3- Adjust bottomSheet frame and initial position.
+        let height = view.frame.height
+        let width  = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+    }
+    
 }
 
 extension apolloNoteVC: CLLocationManagerDelegate{
