@@ -4,9 +4,9 @@
         <attribute name="noteAudio" optional="YES" attributeType="String"/>
         <attribute name="noteDescription" optional="YES" attributeType="String"/>
         <attribute name="noteImage" optional="YES" attributeType="Binary"/>
-        <attribute name="noteLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="noteLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="noteLocation" optional="YES" attributeType="String"/>
-        <attribute name="noteLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="noteLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="noteName" optional="YES" attributeType="String"/>
     </entity>
     <elements>

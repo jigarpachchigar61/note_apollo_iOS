@@ -31,9 +31,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var indexPath: Int?
     
     var locationManager: CLLocationManager!
+    var noteAudioFileName: String? = nil
     var noteLocationPlace: String = "" {
         didSet{
-            note?.noteAudio
             self.notesLocation.text = "Location: " + noteLocationPlace
         }
     }
@@ -66,6 +66,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             notesTitle.text = noteData.noteName
             notesDesc.text = noteData.noteDescription
             noteImageView.image = UIImage(data: noteData.noteImage! as Data)
+            noteLocationPlace = noteData.noteLocation ?? ""
+            noteLocation = CLLocationCoordinate2D(latitude: noteData.noteLatitude, longitude: noteData.noteLongitude)
+            noteAudioFileName = noteData.noteAudio
         } else {
             initLocationManager()
         }
@@ -209,7 +212,10 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     
                     note.noteName = noteTitle
                     note.noteDescription = noteDesc
-                    
+                    note.noteLocation = noteLocationPlace
+                    note.noteLatitude = noteLocation.latitude
+                    note.noteLongitude = noteLocation.longitude
+                    note.noteAudio = noteAudioFileName
                     saveNoteData() {
                         
                         let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
@@ -242,6 +248,11 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     managedObject!.setValue(data, forKey: "noteImage")
                 }
                 
+                managedObject!.setValue(noteLocationPlace, forKey: "noteLocation")
+                managedObject!.setValue(noteLocation.latitude, forKey: "noteLatitude")
+                managedObject!.setValue(noteLocation.longitude, forKey: "noteLongitude")
+                managedObject!.setValue(noteAudioFileName, forKey: "noteAudio")
+                
                 do {
                     try context.save()
                     
@@ -269,26 +280,20 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     //MARK: - Check Finish Image Media
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
             self.noteImageView.image = image
             
         }
-        
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     
     //MARK: - note text edit
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if (textView.text == "Note Description") {
             textView.text = ""
-            
         }
-        
     }
     
     //MARK: - textfield text change
@@ -296,9 +301,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         if(text == "\n") {
             textView.resignFirstResponder()
             return false
-            
         }
-        
         return true
         
     }
@@ -319,7 +322,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     @IBAction func audioRecordClicked(_ sender: Any) {
-        addBottomSheetView(note?.noteAudio ?? "", note?.noteAudio == nil)
+        addBottomSheetView(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
     }
     
     func addBottomSheetView(_ filename: String, _ newRecord: Bool) {

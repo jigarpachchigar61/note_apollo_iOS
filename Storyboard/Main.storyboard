@@ -312,6 +312,9 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-zP-0AJ">
                                 <rect key="frame" x="46" y="80.5" width="228" height="31"/>
+                                <connections>
+                                    <action selector="scrubberMoved:" destination="qUY-mz-iqj" eventType="valueChanged" id="ITv-tB-tXX"/>
+                                </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-Dc-io7">
                                 <rect key="frame" x="63" y="16" width="194" height="30"/>
@@ -319,10 +322,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J86-dP-a1F">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Tap to Record"/>
+                                        <connections>
+                                            <action selector="btnRecordClicked:" destination="qUY-mz-iqj" eventType="touchUpInside" id="KRa-6i-99C"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-ky-SrN">
                                         <rect key="frame" x="112" y="0.0" width="82" height="30"/>
                                         <state key="normal" title="Play Record"/>
+                                        <connections>
+                                            <action selector="btnPlaybackClicked:" destination="qUY-mz-iqj" eventType="touchUpInside" id="1yy-K6-s5X"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -57,6 +57,15 @@ class AudioViewController: UIViewController {
 
         view.insertSubview(bluredView, at: 0)
     }
+    
+    @IBAction func btnRecordClicked(_ sender: Any) {
+        recordTapped()
+    }
+    
+    @IBAction func btnPlaybackClicked(_ sender: Any) {
+        playBackTapped()
+    }
+    
 }
 
 extension AudioViewController: AVAudioRecorderDelegate{
@@ -94,7 +103,7 @@ extension AudioViewController: AVAudioRecorderDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     
-    @objc func recordTapped() {
+    func recordTapped() {
         if audioRecorder == nil {
             startRecording()
         } else {
@@ -134,8 +143,7 @@ extension AudioViewController: AVAudioRecorderDelegate{
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
-            playbackButton.isHidden = false
-            seekBar.isHidden = false
+            initPlayback()
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             recordProblem()
@@ -146,7 +154,7 @@ extension AudioViewController: AVAudioRecorderDelegate{
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName + ".m4a")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-            playbackButton.setTitle("Pause", for:.normal)
+            playbackButton.isHidden = false
             seekBar.isHidden = false
             seekBar.maximumValue = Float(audioPlayer.duration)
         } catch {
