@@ -334,6 +334,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             AudioViewController
         bottomSheetVC.fileName = filename
         bottomSheetVC.newRecord = newRecord
+        bottomSheetVC.noteVC = self
 
         // 2- Add bottomSheetVC as a child view
         self.addChild(bottomSheetVC)

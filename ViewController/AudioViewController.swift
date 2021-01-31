@@ -22,13 +22,11 @@ class AudioViewController: UIViewController {
     
     var fileName: String!
     var newRecord: Bool = true
+    var noteVC: apolloNoteVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initRecord()
-        if !newRecord {
-            initPlayback()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +64,10 @@ class AudioViewController: UIViewController {
         playBackTapped()
     }
     
+    func audioRecorded(){
+        noteVC.noteAudioFileName = fileName
+    }
+    
 }
 
 extension AudioViewController: AVAudioRecorderDelegate{
@@ -93,6 +95,10 @@ extension AudioViewController: AVAudioRecorderDelegate{
         seekBar.isHidden = false
         playbackButton.isHidden = true
         seekBar.isHidden = true
+        if !newRecord {
+            recordButton.setTitle("Tap to Record", for: .normal)
+            initPlayback()
+        }
     }
     
     func recordProblem(){
@@ -144,6 +150,7 @@ extension AudioViewController: AVAudioRecorderDelegate{
         audioRecorder = nil
         
         if success {
+            audioRecorded()
             recordButton.setTitle("Tap to Re-record", for: .normal)
             initPlayback()
         } else {
