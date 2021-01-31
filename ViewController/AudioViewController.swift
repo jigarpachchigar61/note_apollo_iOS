@@ -13,6 +13,7 @@ class AudioViewController: UIViewController {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playbackButton: UIButton!
     @IBOutlet weak var txtTimer: UITextField!
@@ -22,7 +23,7 @@ class AudioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initRecord(fileName: "dummy")
+//        initRecord(fileName: "dummy")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,13 +36,13 @@ class AudioViewController: UIViewController {
 
         UIView.animate(withDuration: 0.3) { [weak self] in
             let frame = self?.view.frame
-            let yComponent = UIScreen.main.bounds.height - 200
+            let yComponent = UIScreen.main.bounds.height - 250
             self?.view.frame = CGRect(x: 0, y: yComponent, width: frame!.width, height: frame!.height)
         }
     }
     
     func prepareBackgroundView(){
-        let blurEffect = UIBlurEffect.init(style: .dark)
+        let blurEffect = UIBlurEffect.init(style: .light)
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
         let bluredView = UIVisualEffectView.init(effect: blurEffect)
         bluredView.contentView.addSubview(visualEffect)

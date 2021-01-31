@@ -301,7 +301,7 @@
         <!--Audio View Controller-->
         <scene sceneID="umI-qi-l3U">
             <objects>
-                <viewController id="qUY-mz-iqj" customClass="AudioViewController" customModule="note_apollo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qUY-mz-iqj" customClass="AudioViewController" customModule="note_apollo_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mad-rz-NXO"/>
                         <viewControllerLayoutGuide type="bottom" id="dbJ-A4-mNG"/>
@@ -342,6 +342,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="AudioViewController"/>
                         <constraints>
                             <constraint firstItem="Txn-6r-q4k" firstAttribute="top" secondItem="Kjc-Dc-io7" secondAttribute="bottom" constant="8" id="2Vh-gc-DDN"/>
                             <constraint firstItem="LrF-zP-0AJ" firstAttribute="leading" secondItem="9Al-SX-05Q" secondAttribute="leadingMargin" constant="32" id="3sB-UA-lz8"/>
@@ -356,7 +357,6 @@
                     <connections>
                         <outlet property="playbackButton" destination="8cy-ky-SrN" id="G44-7p-guu"/>
                         <outlet property="recordButton" destination="J86-dP-a1F" id="80f-qT-gXB"/>
-                        <outlet property="txtSeekBar" destination="LrF-zP-0AJ" id="njq-tu-URc"/>
                         <outlet property="txtTimer" destination="Txn-6r-q4k" id="2gF-jS-8ms"/>
                     </connections>
                 </viewController>
