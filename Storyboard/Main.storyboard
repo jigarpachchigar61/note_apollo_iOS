@@ -128,7 +128,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dOI-6t-tTb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pbP-Ms-Mrj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22L-HK-LAt">
@@ -203,7 +203,7 @@
                                         </constraints>
                                         <state key="normal" image="audio"/>
                                         <connections>
-                                            <segue destination="qUY-mz-iqj" kind="show" id="2w6-yH-Woc"/>
+                                            <action selector="audioRecordClicked:" destination="vAq-dH-0Fi" eventType="touchUpInside" id="oHn-bV-KIj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmq-Db-xmN">
@@ -274,11 +274,11 @@
                         <viewControllerLayoutGuide type="bottom" id="t8h-I7-k5V"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hEd-Vp-DrV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="75J-tW-3BW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -307,11 +307,58 @@
                         <viewControllerLayoutGuide type="bottom" id="dbJ-A4-mNG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Al-SX-05Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-zP-0AJ">
+                                <rect key="frame" x="46" y="80.5" width="228" height="31"/>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-Dc-io7">
+                                <rect key="frame" x="63" y="16" width="194" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J86-dP-a1F">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                        <state key="normal" title="Tap to Record"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-ky-SrN">
+                                        <rect key="frame" x="112" y="0.0" width="82" height="30"/>
+                                        <state key="normal" title="Play Record"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8cy-ky-SrN" secondAttribute="bottom" id="A4D-hb-WiH"/>
+                                    <constraint firstItem="8cy-ky-SrN" firstAttribute="leading" secondItem="J86-dP-a1F" secondAttribute="trailing" constant="16" id="YQ9-ms-02W"/>
+                                    <constraint firstItem="J86-dP-a1F" firstAttribute="leading" secondItem="Kjc-Dc-io7" secondAttribute="leading" id="kq6-vg-hPs"/>
+                                    <constraint firstItem="J86-dP-a1F" firstAttribute="top" secondItem="Kjc-Dc-io7" secondAttribute="top" id="otq-mm-GIG"/>
+                                    <constraint firstAttribute="trailing" secondItem="8cy-ky-SrN" secondAttribute="trailing" id="rcM-Xr-LmV"/>
+                                    <constraint firstAttribute="bottom" secondItem="J86-dP-a1F" secondAttribute="bottom" id="yan-5I-B1K"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txn-6r-q4k">
+                                <rect key="frame" x="158" y="54" width="4" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Txn-6r-q4k" firstAttribute="top" secondItem="Kjc-Dc-io7" secondAttribute="bottom" constant="8" id="2Vh-gc-DDN"/>
+                            <constraint firstItem="LrF-zP-0AJ" firstAttribute="leading" secondItem="9Al-SX-05Q" secondAttribute="leadingMargin" constant="32" id="3sB-UA-lz8"/>
+                            <constraint firstItem="Kjc-Dc-io7" firstAttribute="centerX" secondItem="9Al-SX-05Q" secondAttribute="centerX" id="5Ht-0i-kaL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LrF-zP-0AJ" secondAttribute="trailing" constant="32" id="Bs9-6W-eGq"/>
+                            <constraint firstItem="LrF-zP-0AJ" firstAttribute="top" secondItem="Txn-6r-q4k" secondAttribute="bottom" constant="8" id="HK2-ox-dN0"/>
+                            <constraint firstItem="Kjc-Dc-io7" firstAttribute="top" secondItem="9Al-SX-05Q" secondAttribute="topMargin" constant="16" id="U6n-48-h8k"/>
+                            <constraint firstItem="Txn-6r-q4k" firstAttribute="centerX" secondItem="9Al-SX-05Q" secondAttribute="centerX" id="gOw-O3-HDO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="78y-ef-cWJ"/>
+                    <connections>
+                        <outlet property="playbackButton" destination="8cy-ky-SrN" id="G44-7p-guu"/>
+                        <outlet property="recordButton" destination="J86-dP-a1F" id="80f-qT-gXB"/>
+                        <outlet property="txtSeekBar" destination="LrF-zP-0AJ" id="njq-tu-URc"/>
+                        <outlet property="txtTimer" destination="Txn-6r-q4k" id="2gF-jS-8ms"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYB-OU-RFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,7 +404,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LxK-So-mBk"/>
+        <segue reference="khk-yF-085"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBlueColor"/>
     <resources>

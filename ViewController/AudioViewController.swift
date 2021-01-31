@@ -13,12 +13,43 @@ class AudioViewController: UIViewController {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
-    var recordButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var playbackButton: UIButton!
+    @IBOutlet weak var txtTimer: UITextField!
+    @IBOutlet weak var txtSeekBar: UISlider!
+    
     var fileName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initRecord(fileName: "dummy")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       prepareBackgroundView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            let frame = self?.view.frame
+            let yComponent = UIScreen.main.bounds.height - 200
+            self?.view.frame = CGRect(x: 0, y: yComponent, width: frame!.width, height: frame!.height)
+        }
+    }
+    
+    func prepareBackgroundView(){
+        let blurEffect = UIBlurEffect.init(style: .dark)
+        let visualEffect = UIVisualEffectView.init(effect: blurEffect)
+        let bluredView = UIVisualEffectView.init(effect: blurEffect)
+        bluredView.contentView.addSubview(visualEffect)
+
+        visualEffect.frame = UIScreen.main.bounds
+        bluredView.frame = UIScreen.main.bounds
+
+        view.insertSubview(bluredView, at: 0)
     }
 }
 
@@ -51,12 +82,12 @@ extension AudioViewController: AVAudioRecorderDelegate{
     }
     
     func loadRecordingUI() {
-        recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 128, height: 64))
-        recordButton.setTitle("Tap to Record", for: .normal)
-        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-        recordButton.backgroundColor = .blue
-        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        view.addSubview(recordButton)
+//        recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 128, height: 64))
+//        recordButton.setTitle("Tap to Record", for: .normal)
+//        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+//        recordButton.backgroundColor = .blue
+//        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
+//        view.addSubview(recordButton)
     }
     
     @objc func recordTapped() {

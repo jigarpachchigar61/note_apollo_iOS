@@ -52,11 +52,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     
     var refreshControl = UIRefreshControl()
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-            addBottomSheetView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -320,6 +315,11 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             let destination = segue.destination as! LocationViewController
             destination.noteLocation = self.noteLocation
         }
+    }
+    
+    
+    @IBAction func audioRecordClicked(_ sender: Any) {
+        addBottomSheetView()
     }
     
     func addBottomSheetView() {
