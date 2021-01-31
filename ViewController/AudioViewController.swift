@@ -106,6 +106,8 @@ extension AudioViewController: AVAudioRecorderDelegate{
     func recordTapped() {
         if audioRecorder == nil {
             startRecording()
+            playbackButton.isHidden = true
+            seekBar.isHidden = true
         } else {
             finishRecording(success: true)
         }
@@ -154,6 +156,7 @@ extension AudioViewController: AVAudioRecorderDelegate{
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName + ".m4a")
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
+            playbackButton.setTitle("Play Record", for:.normal)
             playbackButton.isHidden = false
             seekBar.isHidden = false
             seekBar.maximumValue = Float(audioPlayer.duration)
@@ -167,16 +170,22 @@ extension AudioViewController: AVAudioRecorderDelegate{
             playbackButton.setTitle("Pause", for:.normal)
             audioPlayer.play()
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats:true)
+            recordButton.isHidden = true
         } else {
             playbackButton.setTitle("Play Record", for:.normal)
             audioPlayer.pause()
             timer.invalidate()
+            recordButton.isHidden = false
         }
     }
     
     // update scrubber based on player current time
     @objc func updateScrubber() {
         seekBar.value = Float(audioPlayer.currentTime)
+        if seekBar.value == seekBar.minimumValue {
+            playbackButton.setTitle("Play Record", for:.normal)
+            recordButton.isHidden = false
+        }
     }
     
     @IBAction func scrubberMoved(_ sender: UISlider) {
