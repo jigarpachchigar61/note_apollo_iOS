@@ -349,6 +349,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QS-d2-K3X">
+                                <rect key="frame" x="272" y="9" width="32" height="29.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="JPN-sI-axQ"/>
+                                    <constraint firstAttribute="height" constant="32" id="Sxd-wi-159"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="clear" catalog="system"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="qUY-mz-iqj" eventType="touchUpInside" id="NZv-jm-6Ze"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="AudioViewController"/>
@@ -358,7 +369,9 @@
                             <constraint firstItem="Kjc-Dc-io7" firstAttribute="centerX" secondItem="9Al-SX-05Q" secondAttribute="centerX" id="5Ht-0i-kaL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LrF-zP-0AJ" secondAttribute="trailing" constant="32" id="Bs9-6W-eGq"/>
                             <constraint firstItem="LrF-zP-0AJ" firstAttribute="top" secondItem="Txn-6r-q4k" secondAttribute="bottom" constant="8" id="HK2-ox-dN0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2QS-d2-K3X" secondAttribute="trailing" id="TL6-ye-REk"/>
                             <constraint firstItem="Kjc-Dc-io7" firstAttribute="top" secondItem="9Al-SX-05Q" secondAttribute="topMargin" constant="16" id="U6n-48-h8k"/>
+                            <constraint firstItem="2QS-d2-K3X" firstAttribute="top" secondItem="Mad-rz-NXO" secondAttribute="bottom" constant="8" id="bUx-71-6rf"/>
                             <constraint firstItem="Txn-6r-q4k" firstAttribute="centerX" secondItem="9Al-SX-05Q" secondAttribute="centerX" id="gOw-O3-HDO"/>
                         </constraints>
                     </view>
@@ -420,6 +433,7 @@
     <resources>
         <image name="audio" width="512" height="512"/>
         <image name="cancelIcon" width="16" height="16"/>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="create" width="16" height="16"/>
         <image name="map" width="512" height="512"/>
         <image name="noteimg" width="256" height="256"/>

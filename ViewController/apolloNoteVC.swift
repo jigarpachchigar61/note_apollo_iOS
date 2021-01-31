@@ -327,9 +327,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     
     func addBottomSheetView(_ filename: String, _ newRecord: Bool) {
         // 1- Init bottomSheetVC
-//        let bottomSheetVC = AudioViewController()
-        
-        let bottomSheetVC:AudioViewController =
+        let bottomSheetVC =
         self.storyboard!.instantiateViewController(withIdentifier: "AudioViewController") as!
             AudioViewController
         bottomSheetVC.fileName = filename

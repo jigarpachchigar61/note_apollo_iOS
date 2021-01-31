@@ -30,13 +30,13 @@ class AudioViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       prepareBackgroundView()
+        super.viewWillAppear(animated)
+        prepareBackgroundView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         UIView.animate(withDuration: 0.3) { [weak self] in
             let frame = self?.view.frame
             let yComponent = UIScreen.main.bounds.height - 250
@@ -49,10 +49,10 @@ class AudioViewController: UIViewController {
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
         let bluredView = UIVisualEffectView.init(effect: blurEffect)
         bluredView.contentView.addSubview(visualEffect)
-
+        
         visualEffect.frame = UIScreen.main.bounds
         bluredView.frame = UIScreen.main.bounds
-
+        
         view.insertSubview(bluredView, at: 0)
     }
     
@@ -68,6 +68,11 @@ class AudioViewController: UIViewController {
         noteVC.noteAudioFileName = fileName
     }
     
+    @IBAction func closeClicked(_ sender: Any) {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
 }
 
 extension AudioViewController: AVAudioRecorderDelegate{
