@@ -20,6 +20,8 @@
 		A3E0543A25C47DB900178CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E0543925C47DB900178CAC /* Assets.xcassets */; };
 		A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */; };
 		A3E0544A25C47F2D00178CAC /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */; };
+		C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */; };
+		C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50025C6E4F500171033 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		A3E0543925C47DB900178CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3E0544725C47F2D00178CAC /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A3E0544825C47F2D00178CAC /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		C8EAB50025C6E4F500171033 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 			children = (
 				743DEBB125C4714A00E73565 /* apolloNoteTVC.swift */,
 				743DEBB025C4714A00E73565 /* apolloNoteVC.swift */,
+				C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */,
+				C8EAB50025C6E4F500171033 /* LocationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -302,6 +308,8 @@
 				A3E0544925C47F2D00178CAC /* Note+CoreDataClass.swift in Sources */,
 				743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */,
 				743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */,
+				C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */,
+				C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */,
 				7481CBE625C375E30049A2A5 /* AppDelegate.swift in Sources */,
 				7481CBF025C375E30049A2A5 /* note_apollo_iOS.xcdatamodeld in Sources */,
 				7481CBE825C375E30049A2A5 /* SceneDelegate.swift in Sources */,

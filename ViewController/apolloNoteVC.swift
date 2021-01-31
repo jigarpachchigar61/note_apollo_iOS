@@ -10,21 +10,17 @@ import UIKit
 import CoreData
 
 class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
-
+    
     
     @IBOutlet weak var notesTitle: UITextField!
     @IBOutlet weak var notesDesc: UITextView!
-    
     @IBOutlet weak var notesDetail: UIView!
-
     @IBOutlet weak var noteImageView: UIImageView!
-
     @IBOutlet weak var notesImgView: UIView!
     
     
     var managedObjectContext: NSManagedObjectContext? {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
     }
     
     var notesResFetch: NSFetchedResultsController<Note>!
@@ -33,10 +29,12 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var isNoteAvail = false
     var indexPath: Int?
     
+    var locationManager: CLLocationManager!
+    var noteLocation: CLLocationCoordinate2D!
     
     var refreshControl = UIRefreshControl()
-
-
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +49,8 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             notesTitle.text = noteData.noteName
             notesDesc.text = noteData.noteDescription
             noteImageView.image = UIImage(data: noteData.noteImage! as Data)
-
+        } else {
+            initLocationManager()
         }
         
         //Check Title Avail
@@ -59,7 +58,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             isNoteAvail = true
         }
         
-    
+        
         // Setting Styles
         notesDetail.layer.shadowColor =  UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1.0).cgColor
         notesDetail.layer.shadowOffset = CGSize(width: 0.75, height: 0.75)
@@ -76,9 +75,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         noteImageView.layer.cornerRadius = 2
         
         notesTitle.bottomBorder()
-
+        
     }
-
+    
     
     // Check Image Button Press
     @IBAction func ChkImgBtnPress(_ sender: Any) {
@@ -140,7 +139,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
     //MARK: - Check Finish Image Media
@@ -166,7 +165,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         }
         
     }
-
+    
     //MARK: - Save Button Pressed
     @IBAction func saveButtonWasPressed(_ sender: UIBarButtonItem) {
         if notesTitle.text == "" || notesTitle.text == "Note Title" || notesDesc.text == "" || notesDesc.text == "Note Description" {
@@ -187,14 +186,14 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                 
                 if let moc = managedObjectContext {
                     let note = Note(context: moc)
-
+                    
                     if let data : Data  = self.noteImageView.image!.pngData() {
                         note.noteImage = data as NSData as Data
                     }
-                
+                    
                     note.noteName = noteTitle
                     note.noteDescription = noteDesc
-                
+                    
                     saveNoteData() {
                         
                         let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
@@ -208,11 +207,11 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                             self.navigationController?.popViewController(animated: true)
                             
                         }
-
+                        
                     }
-
+                    
                 }
-            
+                
             }
             
             else if (isNoteAvail == true) {
@@ -236,36 +235,36 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                         self.dismiss(animated: true, completion: nil)
                         
                     }
-                        
+                    
                     else {
                         self.navigationController?.popViewController(animated: true)
                         
                     }
-
+                    
                 }
                 
                 catch {
                     print("Sorry!Can't Update Note.")
                 }
             }
-
+            
         }
-
+        
     }
     
     //MARK: - Check Finish Image Media
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage {
-                    self.noteImageView.image = image
+            self.noteImageView.image = image
+            
+        }
         
-                }
+        self.dismiss(animated: true, completion: nil)
         
-                self.dismiss(animated: true, completion: nil)
-
     }
-
-
+    
+    
     //MARK: - note text edit
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -277,7 +276,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     //MARK: - textfield text change
-
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -290,14 +288,34 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     //MARK: - textfield should return
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
         
     }
     
+    //MARK: - pass data between screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "noteLocation" {
+            let destination = segue.destination as! LocationViewController
+            destination.noteLocation = self.noteLocation
+        }
+    }
+}
 
+extension apolloNoteVC: CLLocationManagerDelegate{
+    func initLocationManager(){
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+    }
+    //MARK: - store coordinate on update
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        noteLocation = locations[0].coordinate
+    }
 }
 
 extension UITextField {
@@ -311,7 +329,7 @@ extension UITextField {
         self.borderStyle = .none
         self.layer.backgroundColor = UIColor.white.cgColor
         
-       
+        
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
     }

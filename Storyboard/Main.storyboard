@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LlH-U6-iKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LlH-U6-iKF">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -209,7 +209,7 @@
                                         </constraints>
                                         <state key="normal" image="map"/>
                                         <connections>
-                                            <segue destination="Nic-34-6lZ" kind="show" id="0MT-3r-NC2"/>
+                                            <segue destination="Nic-34-6lZ" kind="show" identifier="noteLocation" id="0MT-3r-NC2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="1605" y="105.63380281690141"/>
         </scene>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="7xv-OU-nLm">
             <objects>
-                <viewController id="Nic-34-6lZ" sceneMemberID="viewController">
+                <viewController id="Nic-34-6lZ" customClass="LocationViewController" customModule="note_apollo_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oh0-0s-TIj"/>
                         <viewControllerLayoutGuide type="bottom" id="t8h-I7-k5V"/>
@@ -269,27 +269,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="75J-tW-3BW">
-                                <rect key="frame" x="16" y="0.0" width="288" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="75J-tW-3BW" firstAttribute="top" secondItem="oh0-0s-TIj" secondAttribute="bottom" id="Dts-eB-tCX"/>
-                            <constraint firstItem="t8h-I7-k5V" firstAttribute="top" secondItem="75J-tW-3BW" secondAttribute="bottom" id="Zbe-xC-Z2O"/>
-                            <constraint firstItem="75J-tW-3BW" firstAttribute="leading" secondItem="hEd-Vp-DrV" secondAttribute="leadingMargin" id="hT2-Fk-Y78"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="75J-tW-3BW" secondAttribute="trailing" id="j0m-os-qne"/>
+                            <constraint firstItem="75J-tW-3BW" firstAttribute="top" secondItem="hEd-Vp-DrV" secondAttribute="top" id="6xq-Sx-Jvy"/>
+                            <constraint firstAttribute="bottom" secondItem="75J-tW-3BW" secondAttribute="bottom" id="YPd-9Q-B7v"/>
+                            <constraint firstItem="75J-tW-3BW" firstAttribute="leading" secondItem="hEd-Vp-DrV" secondAttribute="leading" id="cze-8c-SVb"/>
+                            <constraint firstAttribute="trailing" secondItem="75J-tW-3BW" secondAttribute="trailing" id="m7e-vQ-h9j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1OX-od-Q08"/>
+                    <connections>
+                        <outlet property="mapView" destination="75J-tW-3BW" id="WvG-pd-RZp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctL-wQ-fP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="106"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio View Controller-->
         <scene sceneID="umI-qi-l3U">
             <objects>
-                <viewController id="qUY-mz-iqj" sceneMemberID="viewController">
+                <viewController id="qUY-mz-iqj" customClass="AudioViewController" customModule="note_apollo_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mad-rz-NXO"/>
                         <viewControllerLayoutGuide type="bottom" id="dbJ-A4-mNG"/>
