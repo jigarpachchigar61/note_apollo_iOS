@@ -10,7 +10,7 @@ import CoreData
 
 class CategoryViewController: UIViewController {
     
-    var parentViewController: apolloNoteVC!
+    var noteVC: apolloNoteVC? = nil
     var selectedCategory: String? = nil
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categoryList: [NoteCategory] = []
@@ -56,13 +56,34 @@ class CategoryViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         btnAdd.isEnabled = textField.hasText
+        txtAddCategory.layer.borderColor = UIColor.systemGray.cgColor
     }
     
     @IBAction func addClicked(_ sender: Any) {
         if let newCategory = txtAddCategory.text {
-            addCategoryInList(name: newCategory)
+            if !checkCategoryIsThere(newCategory) {
+                addCategoryInList(name: newCategory)
+            } else {
+                txtAddCategory.layer.borderColor = UIColor.systemRed.cgColor
+            }
         }
     }
+    
+    //MARK: - get old or create a new Category
+    func checkCategoryIsThere(_ category: String) -> Bool{
+        let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", category)
+        do {
+            let categoryList = try context.fetch(request)
+            if categoryList.count > 0{
+                return true
+            }
+        } catch {
+            print("Error loading provider \(error.localizedDescription)")
+        }
+        return false
+    }
+    
     @IBAction func closeClicked(_ sender: Any) {
         willMove(toParent: nil)
         view.removeFromSuperview()
@@ -111,7 +132,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCategory = categoryList[indexPath.row].name
-        parentViewController.noteCategoryName = selectedCategory ?? "UnCategory"
+        noteVC?.noteCategoryName = selectedCategory ?? "UnCategory"
         tableView.reloadData()
     }
 }

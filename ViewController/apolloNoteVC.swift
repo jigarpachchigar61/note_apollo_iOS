@@ -370,6 +370,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         self.storyboard!.instantiateViewController(withIdentifier: "CategoryViewController") as!
             CategoryViewController
         bottomSheetVC.selectedCategory = selectedCategory
+        bottomSheetVC.noteVC = self
 
         // 2- Add bottomSheetVC as a child view
         self.addChild(bottomSheetVC)
