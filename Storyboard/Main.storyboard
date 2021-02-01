@@ -188,12 +188,12 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-za-WpB">
-                                <rect key="frame" x="16" y="415" width="288" height="34"/>
+                                <rect key="frame" x="8" y="457" width="304" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-Dw-Gcu">
-                                <rect key="frame" x="66.5" y="457" width="187" height="35"/>
+                                <rect key="frame" x="66.5" y="499" width="187" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-9D-Pha">
                                         <rect key="frame" x="0.0" y="1" width="35" height="32.5"/>
@@ -230,20 +230,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pg8-pd-ybZ">
+                                <rect key="frame" x="8" y="415" width="304" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="B2L-za-WpB" firstAttribute="top" secondItem="8aL-eO-G96" secondAttribute="bottom" constant="8" id="62G-0q-qPo"/>
                             <constraint firstItem="22L-HK-LAt" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="7hV-OI-hRR"/>
                             <constraint firstAttribute="trailing" secondItem="8aL-eO-G96" secondAttribute="trailing" constant="8" id="9bX-vV-UW6"/>
+                            <constraint firstItem="B2L-za-WpB" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="BBh-hL-STr"/>
                             <constraint firstItem="8aL-eO-G96" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="JKS-0D-872"/>
                             <constraint firstItem="7pZ-Dw-Gcu" firstAttribute="centerX" secondItem="8aL-eO-G96" secondAttribute="centerX" id="JMp-I9-eYY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B2L-za-WpB" secondAttribute="trailing" id="KS6-Co-fWq"/>
                             <constraint firstItem="8aL-eO-G96" firstAttribute="top" secondItem="22L-HK-LAt" secondAttribute="bottom" constant="9" id="Uu9-Dd-6Kj"/>
+                            <constraint firstItem="pg8-pd-ybZ" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leading" constant="8" id="Wsk-lf-0FE"/>
                             <constraint firstAttribute="trailing" secondItem="22L-HK-LAt" secondAttribute="trailing" constant="8" id="Xq5-ah-HIK"/>
                             <constraint firstItem="7pZ-Dw-Gcu" firstAttribute="top" secondItem="B2L-za-WpB" secondAttribute="bottom" constant="8" id="Ywg-vj-qzM"/>
+                            <constraint firstItem="pg8-pd-ybZ" firstAttribute="top" secondItem="8aL-eO-G96" secondAttribute="bottom" constant="8" id="d7j-HN-AZb"/>
+                            <constraint firstAttribute="trailing" secondItem="B2L-za-WpB" secondAttribute="trailing" constant="8" id="ivk-kQ-UeU"/>
+                            <constraint firstItem="B2L-za-WpB" firstAttribute="top" secondItem="pg8-pd-ybZ" secondAttribute="bottom" constant="8" id="lkr-KG-Wvi"/>
                             <constraint firstItem="22L-HK-LAt" firstAttribute="top" secondItem="l3a-EF-rTW" secondAttribute="bottom" constant="8" id="oYK-8I-KeU"/>
-                            <constraint firstItem="B2L-za-WpB" firstAttribute="leading" secondItem="pbP-Ms-Mrj" secondAttribute="leadingMargin" id="qzm-Wu-7GJ"/>
+                            <constraint firstAttribute="trailing" secondItem="pg8-pd-ybZ" secondAttribute="trailing" constant="8" id="yyt-hh-I9s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note Details" id="SvL-sc-52y">
@@ -260,6 +268,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="noteImageView" destination="ziH-Jl-oSJ" id="5dQ-42-fdQ"/>
+                        <outlet property="notesCategory" destination="pg8-pd-ybZ" id="B92-2r-dfC"/>
                         <outlet property="notesDesc" destination="uTK-De-Rif" id="Jpp-RL-hqI"/>
                         <outlet property="notesDetail" destination="22L-HK-LAt" id="CUS-BY-iL5"/>
                         <outlet property="notesImgView" destination="8aL-eO-G96" id="16d-V4-iT0"/>

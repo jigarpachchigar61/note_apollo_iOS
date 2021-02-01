@@ -18,6 +18,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     @IBOutlet weak var noteImageView: UIImageView!
     @IBOutlet weak var notesImgView: UIView!
     @IBOutlet weak var notesLocation: UITextField!
+    @IBOutlet weak var notesCategory: UITextField!
     
     
     var managedObjectContext: NSManagedObjectContext? {
@@ -30,7 +31,11 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var isNoteAvail = false
     var indexPath: Int?
     
-    var noteCategoryName: String = "UnCategory"
+    var noteCategoryName: String = "UnCategory" {
+        didSet{
+            self.notesCategory.text = "Category: " + noteCategoryName
+        }
+    }
     var locationManager: CLLocationManager!
     var noteAudioFileName: String? = nil
     var noteLocationPlace: String = "" {
@@ -70,7 +75,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             noteLocationPlace = noteData.noteLocation ?? ""
             noteLocation = CLLocationCoordinate2D(latitude: noteData.noteLatitude, longitude: noteData.noteLongitude)
             noteAudioFileName = noteData.noteAudio
+            noteCategoryName = noteData.noteCategory?.name ?? "UnCategory"
         } else {
+            noteCategoryName = "UnCategory"
             initLocationManager()
         }
         
@@ -340,7 +347,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     @IBAction func audioRecordClicked(_ sender: Any) {
-       
         addAudioVCInBottonSheet(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
     }
     
