@@ -6,19 +6,31 @@
 //
 
 import UIKit
+import CoreData
 
 class CategoryViewController: UIViewController {
+    
     var selectedCategory: String? = nil
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var categoryList: [NoteCategory] = []
+    
+    @IBOutlet weak var txtAddCategory: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnAdd: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
+        tableView.delegate = self
+        getCategoryList()
+        txtAddCategory.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
+        txtAddCategory.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,5 +54,58 @@ class CategoryViewController: UIViewController {
         
         view.insertSubview(bluredView, at: 0)
     }
+    
+    @IBAction func addClicked(_ sender: Any) {
+        if let newCategory = txtAddCategory.text {
+            addCategoryInList(name: newCategory)
+        }
+    }
+}
+extension CategoryViewController: UITextFieldDelegate{
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        btnAdd.isEnabled = textField.hasText
+    }
 
+}
+
+//MARK: - show Category
+extension CategoryViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func getCategoryList(){
+        let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        do {
+            categoryList = try context.fetch(request)
+            tableView.reloadData()
+        } catch {
+            print("Error loading Category \(error.localizedDescription)")
+        }
+    }
+    
+    func addCategoryInList(name: String){
+        do {
+            let category = NoteCategory(context: context)
+            category.name = name
+            try context.save()
+            getCategoryList()
+        } catch {
+            print("Error loading Category \(error.localizedDescription)")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryViewCell", for: indexPath) as! CategoryViewCell
+        let category = categoryList[indexPath.row]
+        cell.initCell(name: category.name ?? "")
+        if category.name == selectedCategory {
+            cell.accessoryType = .checkmark
+        }
+        return cell
+    }
+    
+    
 }

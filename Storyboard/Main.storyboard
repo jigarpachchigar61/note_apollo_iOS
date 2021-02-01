@@ -454,8 +454,33 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="8km-jB-ml0"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="CategoryViewCell" id="gEn-as-TIX" customClass="CategoryViewCell" customModule="note_apollo_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEn-as-TIX" id="mkl-Zn-6UB">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igv-tu-hvF">
+                                                    <rect key="frame" x="16" y="12.5" width="256" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Igv-tu-hvF" secondAttribute="trailing" id="2bN-28-xDT"/>
+                                                <constraint firstItem="Igv-tu-hvF" firstAttribute="leading" secondItem="mkl-Zn-6UB" secondAttribute="leadingMargin" id="KOa-Qu-8Nh"/>
+                                                <constraint firstItem="Igv-tu-hvF" firstAttribute="centerY" secondItem="mkl-Zn-6UB" secondAttribute="centerY" id="svt-JM-Xrd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtCategoryName" destination="Igv-tu-hvF" id="e24-3o-kk5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpY-z3-lbb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpY-z3-lbb">
                                 <rect key="frame" x="16" y="295" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -469,6 +494,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCB-AI-kvl">
                                 <rect key="frame" x="274" y="295" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addClicked:" destination="7I7-rq-pDa" eventType="touchUpInside" id="1rr-Gy-0hM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -485,6 +513,11 @@
                             <constraint firstItem="DCg-Rm-YUZ" firstAttribute="top" secondItem="Ycz-Sl-rhe" secondAttribute="bottom" constant="8" id="ytg-41-BBl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="SCB-AI-kvl" id="wrR-8W-0Bn"/>
+                        <outlet property="tableView" destination="DCg-Rm-YUZ" id="wzy-oz-NkK"/>
+                        <outlet property="txtAddCategory" destination="XpY-z3-lbb" id="eMT-5x-Ma8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeU-Gn-RZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
