@@ -13,6 +13,7 @@ class apolloNoteTVC: UITableViewController {
 
 
     var notesArr = [Note]()
+    var searchText = ""
     @IBOutlet weak var btnCategory: UIBarButtonItem!
     var selectedCategoryList: [NoteCategory] = []{
         didSet{
@@ -35,6 +36,7 @@ class apolloNoteTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initSearchBar()
         retrieveCategory()
         
         self.navigationController?.navigationBar.tintColor = .gray
@@ -156,7 +158,12 @@ class apolloNoteTVC: UITableViewController {
         managedObjectContext?.perform {
             var notesArr = [Note]()
             let request: NSFetchRequest<Note> = Note.fetchRequest()
-            request.predicate = NSPredicate(format: "noteCategory.name in %@ ", self.selectedCategoryListName)
+            var requestPredicate = NSPredicate(format: "noteCategory.name in %@ ", self.selectedCategoryListName)
+            if !self.searchText.isEmpty {
+                let searchPredict = NSPredicate(format: "noteName CONTAINS[cd] %@ OR noteDescription CONTAINS[cd] %@", self.searchText, self.searchText)
+                requestPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [requestPredicate, searchPredict])
+            }
+            request.predicate = requestPredicate
             
             do {
                 notesArr = try  self.managedObjectContext!.fetch(request)
@@ -235,8 +242,22 @@ class apolloNoteTVC: UITableViewController {
     }
 }
 
-extension apolloNoteTVC: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    // TODO
-  }
+extension apolloNoteTVC: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func initSearchBar(){
+//        self.searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.delegate = self // Monitor when the search button is tapped.
+
+        // Place the search bar in the navigation bar.
+        navigationItem.searchController = searchController
+        
+        // Make the search bar always visible.
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        searchText = searchController.searchBar.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        retrieveNotes()
+    }
 }
