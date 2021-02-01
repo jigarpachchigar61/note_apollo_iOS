@@ -21,6 +21,7 @@
 		C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */; };
 		C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50025C6E4F500171033 /* LocationViewController.swift */; };
 		C8EAB50D25C7292600171033 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50C25C7292600171033 /* LocationPlace.swift */; };
+		C8EAB51B25C7C3BA00171033 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB51A25C7C3BA00171033 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		C8EAB50025C6E4F500171033 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C8EAB50C25C7292600171033 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
+		C8EAB51A25C7C3BA00171033 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				743DEBB025C4714A00E73565 /* apolloNoteVC.swift */,
 				C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */,
 				C8EAB50025C6E4F500171033 /* LocationViewController.swift */,
+				C8EAB51A25C7C3BA00171033 /* CategoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8EAB51B25C7C3BA00171033 /* CategoryViewController.swift in Sources */,
 				743DEBAB25C470F400E73565 /* apolloTVCell.swift in Sources */,
 				743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */,
 				743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */,

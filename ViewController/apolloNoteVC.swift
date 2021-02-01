@@ -322,10 +322,11 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     }
     
     @IBAction func audioRecordClicked(_ sender: Any) {
-        addBottomSheetView(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
+        addCategoryVCInBottonSheet(nil)
+//        addAudioVCInBottonSheet(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
     }
     
-    func addBottomSheetView(_ filename: String, _ newRecord: Bool) {
+    func addAudioVCInBottonSheet(_ filename: String, _ newRecord: Bool) {
         // 1- Init bottomSheetVC
         let bottomSheetVC =
         self.storyboard!.instantiateViewController(withIdentifier: "AudioViewController") as!
@@ -333,6 +334,24 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         bottomSheetVC.fileName = filename
         bottomSheetVC.newRecord = newRecord
         bottomSheetVC.noteVC = self
+
+        // 2- Add bottomSheetVC as a child view
+        self.addChild(bottomSheetVC)
+        self.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: self)
+
+        // 3- Adjust bottomSheet frame and initial position.
+        let height = view.frame.height
+        let width  = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+    }
+    
+    func addCategoryVCInBottonSheet(_ selectedCategory: String?) {
+        // 1- Init bottomSheetVC
+        let bottomSheetVC =
+        self.storyboard!.instantiateViewController(withIdentifier: "CategoryViewController") as!
+            CategoryViewController
+        bottomSheetVC.selectedCategory = selectedCategory
 
         // 2- Add bottomSheetVC as a child view
         self.addChild(bottomSheetVC)
