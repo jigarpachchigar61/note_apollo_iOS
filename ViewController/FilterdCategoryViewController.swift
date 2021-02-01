@@ -116,6 +116,11 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryViewCell", for: indexPath) as! CategoryViewCell
         let category = categoryList[indexPath.row]
         cell.initCell(name: category.name ?? "")
+        if selectedCategory.contains(categoryList[indexPath.row]) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     
@@ -147,7 +152,12 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.isEditing{
             showEditCategoryAlert(category: categoryList[indexPath.row])
+        } else if let index = selectedCategory.firstIndex(of:categoryList[indexPath.row]) {
+            selectedCategory.remove(at: index)
+        } else {
+            selectedCategory.append(categoryList[indexPath.row])
         }
+        tableView.reloadData()
     }
     
     func updateDataList(){
