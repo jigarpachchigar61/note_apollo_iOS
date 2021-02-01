@@ -341,7 +341,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "noteLocation" {
             let destination = segue.destination as! LocationViewController
-            destination.noteLocation = self.noteLocation
+            destination.noteLocation = ["Note":self.noteLocation]
         }
     }
     

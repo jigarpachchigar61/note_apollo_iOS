@@ -11,25 +11,26 @@ import MapKit
 class LocationViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    var noteLocation: CLLocationCoordinate2D? = nil
+    var noteLocation: [String:CLLocationCoordinate2D] = [:]
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         mapView.delegate = self
         mapView.showsUserLocation = false
         mapView.isZoomEnabled = true
         
-        if noteLocation != nil {
-            markLocation(noteLocation!)
+        clearAllAnnotaion()
+        noteLocation.forEach { (noteLocation) in
+            markLocation(noteLocation.value, noteLocation.key)
         }
     }
     
-    func markLocation(_ coordinate: CLLocationCoordinate2D){
-        clearAllAnnotaion()
-        
+    
+    func markLocation(_ coordinate: CLLocationCoordinate2D, _ title: String){
         let annotation = MKPointAnnotation()
-        annotation.title = "Note location"
+        annotation.title = title
         annotation.coordinate = coordinate
         
         let latDelta: CLLocationDegrees = 0.01
