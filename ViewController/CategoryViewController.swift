@@ -56,7 +56,9 @@ class CategoryViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         btnAdd.isEnabled = textField.hasText
-        txtAddCategory.layer.borderColor = UIColor.systemGray.cgColor
+        txtAddCategory.layer.cornerRadius = 5.0
+        txtAddCategory.layer.borderColor = UIColor.lightGray.cgColor
+        txtAddCategory.layer.borderWidth = CGFloat(1.0)
     }
     
     @IBAction func addClicked(_ sender: Any) {
@@ -64,7 +66,9 @@ class CategoryViewController: UIViewController {
             if !checkCategoryIsThere(newCategory) {
                 addCategoryInList(name: newCategory)
             } else {
-                txtAddCategory.layer.borderColor = UIColor.systemRed.cgColor
+                txtAddCategory.layer.cornerRadius = 5.0
+                txtAddCategory.layer.borderColor = UIColor.red.cgColor
+                txtAddCategory.layer.borderWidth = CGFloat(1.0)
             }
         }
     }
