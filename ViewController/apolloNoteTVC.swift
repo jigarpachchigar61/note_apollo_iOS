@@ -13,6 +13,19 @@ class apolloNoteTVC: UITableViewController {
 
 
     var notesArr = [Note]()
+    @IBOutlet weak var btnCategory: UIBarButtonItem!
+    var selectedCategoryList: [NoteCategory] = []{
+        didSet{
+            selectedCategoryListName = selectedCategoryList.map { (category) -> String in
+                category.name ?? ""
+            }
+        }
+    }
+    var selectedCategoryListName: [String] = []{
+        didSet{
+            retrieveNotes()
+        }
+    }
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -20,10 +33,9 @@ class apolloNoteTVC: UITableViewController {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveNotes()
+        retrieveCategory()
         
         self.navigationController?.navigationBar.tintColor = .gray
         tableView.delegate = self
@@ -41,18 +53,12 @@ class apolloNoteTVC: UITableViewController {
 
     @objc func refresh(_ sender: AnyObject) {
        // Code to refresh table view
-
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
-        }
-    
+        retrieveNotes()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        retrieveNotes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,7 +68,6 @@ class apolloNoteTVC: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
@@ -93,13 +98,6 @@ class apolloNoteTVC: UITableViewController {
         tableView.reloadData()
         
     }
-    
-    @objc func refresh(sender:AnyObject) {
-       // Code to refresh table view
-
-        self.refreshControl!.endRefreshing()
-    }
-    
     
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -138,6 +136,7 @@ class apolloNoteTVC: UITableViewController {
                 if let notesAavil = notes {
                     self.notesArr = notesAavil
                     self.tableView.reloadData()
+                    self.refreshControl!.endRefreshing()
                 }
                 
             }
@@ -146,10 +145,21 @@ class apolloNoteTVC: UITableViewController {
         
     }
     
+    func retrieveCategory(){
+        let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        do {
+            selectedCategoryList = try managedObjectContext?.fetch(request) ?? []
+        } catch {
+            print("Error loading Category \(error.localizedDescription)")
+        }
+    }
+    
     func fetchNotesFromCoreData(completion: @escaping ([Note]?)->Void){
         managedObjectContext?.perform {
             var notesArr = [Note]()
             let request: NSFetchRequest<Note> = Note.fetchRequest()
+            request.predicate = NSPredicate(format: "noteCategory.name in %@ ", self.selectedCategoryListName)
             
             do {
                 notesArr = try  self.managedObjectContext!.fetch(request)
@@ -197,6 +207,7 @@ class apolloNoteTVC: UITableViewController {
         self.storyboard!.instantiateViewController(withIdentifier: "FilterdCategoryViewController") as!
             FilterdCategoryViewController
         bottomSheetVC.noteTVC = self
+        bottomSheetVC.selectedCategory = selectedCategoryList
 
         // 2- Add bottomSheetVC as a child view
         self.addChild(bottomSheetVC)
@@ -207,8 +218,10 @@ class apolloNoteTVC: UITableViewController {
         let height = view.frame.height
         let width  = view.frame.width
         bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+        btnCategory.isEnabled = false
     }
-
+    
+    
 }
 
 extension apolloNoteTVC: UISearchResultsUpdating {

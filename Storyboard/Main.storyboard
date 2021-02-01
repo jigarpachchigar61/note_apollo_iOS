@@ -122,6 +122,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnCategory" destination="26n-M1-Ha0" id="77W-33-urf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdg-Vb-HEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -54,7 +54,7 @@ class FilterdCategoryViewController: UIViewController {
     //MARK: - get old or create a new Category
     func checkCategoryIsThere(_ category: String) -> Bool{
         let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
-        request.predicate = NSPredicate(format: "name = %@", category)
+        request.predicate = NSPredicate(format: "name == %@", category)
         do {
             let categoryList = try context.fetch(request)
             if categoryList.count > 0{
@@ -157,6 +157,7 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         } else {
             selectedCategory.append(categoryList[indexPath.row])
         }
+        noteTVC?.selectedCategoryList = selectedCategory
         tableView.reloadData()
     }
     
