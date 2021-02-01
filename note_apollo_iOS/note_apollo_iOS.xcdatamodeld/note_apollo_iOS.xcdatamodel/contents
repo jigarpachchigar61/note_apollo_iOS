@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Note" inverseName="noteCategory" inverseEntity="Note"/>
-    </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="noteAudio" optional="YES" attributeType="String"/>
         <attribute name="noteDescription" optional="YES" attributeType="String"/>
@@ -12,10 +8,14 @@
         <attribute name="noteLocation" optional="YES" attributeType="String"/>
         <attribute name="noteLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="noteName" optional="YES" attributeType="String"/>
-        <relationship name="noteCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="notes" inverseEntity="Category"/>
+        <relationship name="noteCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteCategory" inverseName="notes" inverseEntity="NoteCategory"/>
+    </entity>
+    <entity name="NoteCategory" representedClassName="NoteCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Note" inverseName="noteCategory" inverseEntity="Note"/>
     </entity>
     <elements>
         <element name="Note" positionX="-63" positionY="-18" width="128" height="163"/>
-        <element name="Category" positionX="-404.24609375" positionY="64.75" width="128" height="73"/>
+        <element name="NoteCategory" positionX="-404.24609375" positionY="64.75" width="128" height="73"/>
     </elements>
 </model>

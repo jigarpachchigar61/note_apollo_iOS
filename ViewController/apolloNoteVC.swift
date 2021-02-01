@@ -217,7 +217,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     note.noteLatitude = noteLocation.latitude
                     note.noteLongitude = noteLocation.longitude
                     note.noteAudio = noteAudioFileName
-//                    note.noteCategory
+                    note.noteCategory = getOrCreateCategory(noteCategoryName)
                     saveNoteData() {
                         
                         let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
@@ -254,7 +254,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                 managedObject!.setValue(noteLocation.latitude, forKey: "noteLatitude")
                 managedObject!.setValue(noteLocation.longitude, forKey: "noteLongitude")
                 managedObject!.setValue(noteAudioFileName, forKey: "noteAudio")
-//                managedObject!.setValue(noteCategoryName, forKey: "noteAudio")
+                managedObject!.setValue(getOrCreateCategory(noteCategoryName), forKey: "noteCategory")
                 
                 do {
                     try context.save()
@@ -264,22 +264,33 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     if isPresentingInAddFluidPatientMode {
                         self.dismiss(animated: true, completion: nil)
                         
-                    }
-                    
-                    else {
+                    } else {
                         self.navigationController?.popViewController(animated: true)
                         
                     }
-                    
                 }
-                
                 catch {
                     print("Sorry!Can't Update Note.")
                 }
             }
-            
         }
-        
+    }
+    
+    //MARK: - get old or create a new Category
+    func getOrCreateCategory(_ category: String) -> NoteCategory{
+        let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", category)
+        do {
+            let categoryList = try context.fetch(request)
+            if categoryList.count > 0{
+                return categoryList[0]
+            }
+        } catch {
+            print("Error loading provider \(error.localizedDescription)")
+        }
+        let newCategory = NoteCategory(context: context)
+        newCategory.name = category
+        return newCategory
     }
     
     //MARK: - Check Finish Image Media
@@ -323,6 +334,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             destination.noteLocation = self.noteLocation
         }
     }
+    
     @IBAction func categoryClicked(_ sender: Any) {
         addCategoryVCInBottonSheet(noteCategoryName)
     }
