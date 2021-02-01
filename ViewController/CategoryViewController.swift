@@ -10,6 +10,7 @@ import CoreData
 
 class CategoryViewController: UIViewController {
     
+    var parentViewController: apolloNoteVC!
     var selectedCategory: String? = nil
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categoryList: [NoteCategory] = []
@@ -110,6 +111,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCategory = categoryList[indexPath.row].name
+        parentViewController.noteCategoryName = selectedCategory ?? "UnCategory"
         tableView.reloadData()
     }
 }
