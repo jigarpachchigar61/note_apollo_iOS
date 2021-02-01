@@ -60,7 +60,7 @@ class CategoryViewController: UIViewController {
     }
     
     @IBAction func addClicked(_ sender: Any) {
-        if let newCategory = txtAddCategory.text {
+        if let newCategory = txtAddCategory.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             if !checkCategoryIsThere(newCategory) {
                 addCategoryInList(name: newCategory)
             } else {
@@ -72,7 +72,7 @@ class CategoryViewController: UIViewController {
     //MARK: - get old or create a new Category
     func checkCategoryIsThere(_ category: String) -> Bool{
         let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
-        request.predicate = NSPredicate(format: "name == %@", category)
+        request.predicate = NSPredicate(format: "name = %@", category)
         do {
             let categoryList = try context.fetch(request)
             if categoryList.count > 0{
