@@ -126,6 +126,8 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource{
         cell.initCell(name: category.name ?? "")
         if category.name == selectedCategory {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
         return cell
     }
