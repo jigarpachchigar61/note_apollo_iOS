@@ -101,17 +101,6 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    func addCategoryInList(name: String){
-        do {
-            let category = NoteCategory(context: context)
-            category.name = name
-            try context.save()
-            getCategoryList()
-        } catch {
-            print("Error loading Category \(error.localizedDescription)")
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryList.count
     }

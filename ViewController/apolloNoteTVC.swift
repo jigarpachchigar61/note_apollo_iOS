@@ -52,10 +52,8 @@ class apolloNoteTVC: UITableViewController {
     }
 
     @objc func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
-        retrieveNotes()
+        retrieveCategory()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -63,7 +61,6 @@ class apolloNoteTVC: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 
     // MARK: - Table view data source

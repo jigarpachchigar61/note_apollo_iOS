@@ -15,16 +15,13 @@ class CreateChooseCategoryViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categoryList: [NoteCategory] = []
     
-    @IBOutlet weak var txtAddCategory: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnAdd: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         getCategoryList()
-        txtAddCategory.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,23 +51,33 @@ class CreateChooseCategoryViewController: UIViewController {
         view.insertSubview(bluredView, at: 0)
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        btnAdd.isEnabled = textField.hasText
-        txtAddCategory.layer.cornerRadius = 5.0
-        txtAddCategory.layer.borderColor = UIColor.lightGray.cgColor
-        txtAddCategory.layer.borderWidth = CGFloat(1.0)
+    @IBAction func addClicked(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Add Category", message: "Enter a text", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = ""
+            textField.placeholder = "Category"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let text = alert?.textFields![0].text ?? ""
+            let newCategory = text.trimmingCharacters(in: .whitespacesAndNewlines)
+            if newCategory.isEmpty{
+                self.showAlert("Error", "Category cannot be blank.")
+            } else if !self.checkCategoryIsThere(newCategory) {
+                self.addCategoryInList(name: newCategory)
+            } else {
+                self.showAlert("Error", "Category is already present.")
+            }
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in }))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func addClicked(_ sender: Any) {
-        if let newCategory = txtAddCategory.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
-            if !checkCategoryIsThere(newCategory) {
-                addCategoryInList(name: newCategory)
-            } else {
-                txtAddCategory.layer.cornerRadius = 5.0
-                txtAddCategory.layer.borderColor = UIColor.red.cgColor
-                txtAddCategory.layer.borderWidth = CGFloat(1.0)
-            }
-        }
+    func showAlert(_ title: String, _ msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - get old or create a new Category
