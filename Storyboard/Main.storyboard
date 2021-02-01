@@ -449,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DCg-Rm-YUZ">
-                                <rect key="frame" x="16" y="37" width="288" height="250"/>
+                                <rect key="frame" x="16" y="45" width="288" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="8km-jB-ml0"/>
@@ -481,7 +481,7 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpY-z3-lbb">
-                                <rect key="frame" x="16" y="295" width="242" height="34"/>
+                                <rect key="frame" x="16" y="303" width="242" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -492,25 +492,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCB-AI-kvl">
-                                <rect key="frame" x="274" y="295" width="30" height="30"/>
+                                <rect key="frame" x="274" y="303" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addClicked:" destination="7I7-rq-pDa" eventType="touchUpInside" id="1rr-Gy-0hM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xx9-n1-8Th">
+                                <rect key="frame" x="280" y="5" width="32" height="29.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="6gj-Mg-xEv"/>
+                                    <constraint firstAttribute="height" constant="32" id="rye-gg-UwK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="clear" catalog="system"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="qUY-mz-iqj" eventType="touchUpInside" id="Sqd-CS-KNq"/>
+                                    <action selector="closeClicked:" destination="7I7-rq-pDa" eventType="touchUpInside" id="XF9-O1-RNS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xx9-n1-8Th" firstAttribute="top" secondItem="00G-su-DrG" secondAttribute="bottom" constant="4" id="5Mm-sP-Gzo"/>
                             <constraint firstItem="SCB-AI-kvl" firstAttribute="top" secondItem="DCg-Rm-YUZ" secondAttribute="bottom" constant="8" id="D25-uy-Q5a"/>
                             <constraint firstItem="Ycz-Sl-rhe" firstAttribute="centerX" secondItem="kHJ-hR-pG6" secondAttribute="centerX" id="Jbq-ih-gW8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SCB-AI-kvl" secondAttribute="trailing" id="MbC-l1-LqI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DCg-Rm-YUZ" secondAttribute="trailing" id="MfC-EO-Nva"/>
                             <constraint firstItem="Ycz-Sl-rhe" firstAttribute="top" secondItem="00G-su-DrG" secondAttribute="bottom" constant="8" id="NjW-M6-wCo"/>
+                            <constraint firstAttribute="trailing" secondItem="xx9-n1-8Th" secondAttribute="trailing" constant="8" id="ReU-En-oMs"/>
                             <constraint firstItem="XpY-z3-lbb" firstAttribute="leading" secondItem="kHJ-hR-pG6" secondAttribute="leadingMargin" id="ZvK-Id-M8P"/>
                             <constraint firstItem="SCB-AI-kvl" firstAttribute="leading" secondItem="XpY-z3-lbb" secondAttribute="trailing" constant="16" id="bbs-c0-uHE"/>
                             <constraint firstItem="XpY-z3-lbb" firstAttribute="top" secondItem="DCg-Rm-YUZ" secondAttribute="bottom" constant="8" id="eep-aU-92g"/>
                             <constraint firstItem="DCg-Rm-YUZ" firstAttribute="leading" secondItem="kHJ-hR-pG6" secondAttribute="leadingMargin" id="kgC-L9-UPX"/>
-                            <constraint firstItem="DCg-Rm-YUZ" firstAttribute="top" secondItem="Ycz-Sl-rhe" secondAttribute="bottom" constant="8" id="ytg-41-BBl"/>
+                            <constraint firstItem="DCg-Rm-YUZ" firstAttribute="top" secondItem="Ycz-Sl-rhe" secondAttribute="bottom" constant="16" id="ytg-41-BBl"/>
                         </constraints>
                     </view>
                     <connections>

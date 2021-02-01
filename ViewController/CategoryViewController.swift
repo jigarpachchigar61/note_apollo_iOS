@@ -24,13 +24,11 @@ class CategoryViewController: UIViewController {
         tableView.delegate = self
         getCategoryList()
         txtAddCategory.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
-        txtAddCategory.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,17 +53,20 @@ class CategoryViewController: UIViewController {
         view.insertSubview(bluredView, at: 0)
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        btnAdd.isEnabled = textField.hasText
+    }
+    
     @IBAction func addClicked(_ sender: Any) {
         if let newCategory = txtAddCategory.text {
             addCategoryInList(name: newCategory)
         }
     }
-}
-extension CategoryViewController: UITextFieldDelegate{
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        btnAdd.isEnabled = textField.hasText
+    @IBAction func closeClicked(_ sender: Any) {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
     }
-
 }
 
 //MARK: - show Category
@@ -107,5 +108,8 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCategory = categoryList[indexPath.row].name
+        tableView.reloadData()
+    }
 }
