@@ -196,6 +196,18 @@ class apolloNoteTVC: UITableViewController {
             print("New note added")
             
         }
+        
+        else if segue.identifier == "notesOnMap" {
+            let destination = segue.destination as! LocationViewController
+            var noteLocation:[String: CLLocationCoordinate2D] = [:]
+            notesArr.forEach { (noteData) in
+                if let title = noteData.noteName {
+                noteLocation[title] =
+                    CLLocationCoordinate2D(latitude: noteData.noteLatitude, longitude: noteData.noteLongitude)
+                }
+            }
+            destination.noteLocation = noteLocation
+        }
     }
     
     @IBAction func categoryClicked(_ sender: UIBarButtonItem) {

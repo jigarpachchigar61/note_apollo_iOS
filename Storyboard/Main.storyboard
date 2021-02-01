@@ -112,6 +112,13 @@
                                 <action selector="categoryClicked:" destination="Bql-US-udw" id="dhF-ss-pGq"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9hr-hE-m9j"/>
+                        <barButtonItem title="Notes on Map" id="F8w-Od-NtO">
+                            <connections>
+                                <action selector="notesOnMapClicked:" destination="Bql-US-udw" id="tGs-BP-wzV"/>
+                                <segue destination="Nic-34-6lZ" kind="show" identifier="notesOnMap" id="12I-94-hEn"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Notes" id="4RX-Oi-DjF">
                         <barButtonItem key="rightBarButtonItem" image="create" id="rtC-sU-nrl">
@@ -658,6 +665,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="12I-94-hEn"/>
         <segue reference="LxK-So-mBk"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBlueColor"/>
