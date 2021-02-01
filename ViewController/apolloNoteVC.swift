@@ -373,7 +373,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     func addCategoryVCInBottonSheet(_ selectedCategory: String?) {
         // 1- Init bottomSheetVC
         let bottomSheetVC =
-        self.storyboard!.instantiateViewController(withIdentifier: "CategoryViewController") as!
+        self.storyboard!.instantiateViewController(withIdentifier: "CreateChooseCategoryViewController") as!
             CreateChooseCategoryViewController
         bottomSheetVC.selectedCategory = selectedCategory
         bottomSheetVC.noteVC = self

@@ -19,7 +19,7 @@
 		7481CC0B25C375E50049A2A5 /* note_apollo_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CC0A25C375E50049A2A5 /* note_apollo_iOSUITests.swift */; };
 		A3E0543A25C47DB900178CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E0543925C47DB900178CAC /* Assets.xcassets */; };
 		C8271CA025C7D9A000162F43 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271C9F25C7D9A000162F43 /* CategoryViewCell.swift */; };
-		C8271CA825C7F43E00162F43 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271CA725C7F43E00162F43 /* CategoryViewController.swift */; };
+		C8271CA825C7F43E00162F43 /* FilterdCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8271CA725C7F43E00162F43 /* FilterdCategoryViewController.swift */; };
 		C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */; };
 		C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50025C6E4F500171033 /* LocationViewController.swift */; };
 		C8EAB50D25C7292600171033 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EAB50C25C7292600171033 /* LocationPlace.swift */; };
@@ -62,7 +62,7 @@
 		7481CC0C25C375E50049A2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E0543925C47DB900178CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8271C9F25C7D9A000162F43 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
-		C8271CA725C7F43E00162F43 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		C8271CA725C7F43E00162F43 /* FilterdCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterdCategoryViewController.swift; sourceTree = "<group>"; };
 		C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		C8EAB50025C6E4F500171033 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C8EAB50C25C7292600171033 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		743DEBAF25C4711D00E73565 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C8271CA725C7F43E00162F43 /* CategoryViewController.swift */,
+				C8271CA725C7F43E00162F43 /* FilterdCategoryViewController.swift */,
 				743DEBB125C4714A00E73565 /* apolloNoteTVC.swift */,
 				743DEBB025C4714A00E73565 /* apolloNoteVC.swift */,
 				C8EAB4FB25C6D6B100171033 /* AudioViewController.swift */,
@@ -321,7 +321,7 @@
 				C8EAB51B25C7C3BA00171033 /* CreateChooseCategoryViewController.swift in Sources */,
 				743DEBAB25C470F400E73565 /* apolloTVCell.swift in Sources */,
 				743DEBB225C4714A00E73565 /* apolloNoteVC.swift in Sources */,
-				C8271CA825C7F43E00162F43 /* CategoryViewController.swift in Sources */,
+				C8271CA825C7F43E00162F43 /* FilterdCategoryViewController.swift in Sources */,
 				743DEBB325C4714A00E73565 /* apolloNoteTVC.swift in Sources */,
 				C8EAB50125C6E4F500171033 /* LocationViewController.swift in Sources */,
 				C8EAB4FC25C6D6B100171033 /* AudioViewController.swift in Sources */,

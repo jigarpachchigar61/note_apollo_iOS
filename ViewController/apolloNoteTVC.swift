@@ -186,7 +186,27 @@ class apolloNoteTVC: UITableViewController {
             print("New note added")
             
         }
+    }
+    
+    @IBAction func categoryClicked(_ sender: UIBarButtonItem) {
+        addCategoryVCInBottonSheet()
+    }
+    func addCategoryVCInBottonSheet() {
+        // 1- Init bottomSheetVC
+        let bottomSheetVC =
+        self.storyboard!.instantiateViewController(withIdentifier: "FilterdCategoryViewController") as!
+            FilterdCategoryViewController
+        bottomSheetVC.noteTVC = self
 
+        // 2- Add bottomSheetVC as a child view
+        self.addChild(bottomSheetVC)
+        self.view.addSubview(bottomSheetVC.view)
+        bottomSheetVC.didMove(toParent: self)
+
+        // 3- Adjust bottomSheet frame and initial position.
+        let height = view.frame.height
+        let width  = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
     }
 
 }
