@@ -458,6 +458,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="clear" catalog="system"/>
                                 <connections>
+                                    <action selector="closeClicked:" destination="OmK-Qy-McO" eventType="touchUpInside" id="4zF-H5-aZy"/>
                                     <action selector="closeClicked:" destination="7I7-rq-pDa" eventType="touchUpInside" id="AFt-6h-hkF"/>
                                     <action selector="closeClicked:" destination="qUY-mz-iqj" eventType="touchUpInside" id="dbP-9x-gND"/>
                                 </connections>
