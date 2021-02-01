@@ -10,9 +10,11 @@ import CoreData
 
 class FilterdCategoryViewController: UIViewController {
     var noteTVC: apolloNoteTVC? = nil
+    var selectedCategory: [NoteCategory] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categoryList: [NoteCategory] = []
     
+    @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -68,6 +70,16 @@ class FilterdCategoryViewController: UIViewController {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
+    }
+    @IBAction func editClicked(_ sender: Any) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing {
+            btnEdit.setTitle("Done", for: .normal)
+            btnEdit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        } else {
+            btnEdit.setTitle("Edit", for: .normal)
+            btnEdit.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        }
     }
 }
 

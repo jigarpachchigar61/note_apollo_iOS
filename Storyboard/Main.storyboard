@@ -501,19 +501,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqV-xX-g5h">
+                                <rect key="frame" x="8" y="4" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editClicked:" destination="OmK-Qy-McO" eventType="touchUpInside" id="tSf-OQ-jgv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EqV-xX-g5h" firstAttribute="top" secondItem="tzQ-UV-gZf" secondAttribute="bottom" constant="4" id="1Ml-sr-l9P"/>
                             <constraint firstItem="qD8-Ek-MFS" firstAttribute="top" secondItem="Mcw-q0-PtC" secondAttribute="bottom" constant="16" id="3iR-9Q-k2S"/>
                             <constraint firstAttribute="trailing" secondItem="4WR-yM-VqP" secondAttribute="trailing" constant="8" id="6hg-eN-J1D"/>
                             <constraint firstItem="4WR-yM-VqP" firstAttribute="top" secondItem="tzQ-UV-gZf" secondAttribute="bottom" constant="4" id="HvP-NE-84E"/>
                             <constraint firstItem="Mcw-q0-PtC" firstAttribute="centerX" secondItem="XIz-qJ-dGJ" secondAttribute="centerX" id="Pzy-PO-qWW"/>
+                            <constraint firstItem="EqV-xX-g5h" firstAttribute="leading" secondItem="XIz-qJ-dGJ" secondAttribute="leading" constant="8" id="Uqb-B8-vle"/>
                             <constraint firstItem="qD8-Ek-MFS" firstAttribute="leading" secondItem="XIz-qJ-dGJ" secondAttribute="leading" constant="16" id="btD-Qu-SjA"/>
                             <constraint firstAttribute="trailing" secondItem="qD8-Ek-MFS" secondAttribute="trailing" constant="16" id="wcd-gh-Ryi"/>
                             <constraint firstItem="Mcw-q0-PtC" firstAttribute="top" secondItem="tzQ-UV-gZf" secondAttribute="bottom" constant="8" id="x8u-Rn-C3C"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnEdit" destination="EqV-xX-g5h" id="D7e-vH-7Ha"/>
                         <outlet property="tableView" destination="qD8-Ek-MFS" id="dwF-Uq-e2Z"/>
                     </connections>
                 </viewController>
