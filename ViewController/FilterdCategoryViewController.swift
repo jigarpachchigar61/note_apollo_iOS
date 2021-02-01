@@ -118,4 +118,30 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         cell.initCell(name: category.name ?? "")
         return cell
     }
+    
+    //MARK: - tableView delegate to detect editstyle change
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteCategory(category: categoryList[indexPath.row])
+            
+        }
+    }
+    
+    func deleteCategory(category: NoteCategory){
+        context.delete(category)
+        do {
+            try context.save()
+            getCategoryList()
+        } catch {
+            alertMsg(title: "Error", msg: "Either Category contains notes or something went wrong")
+        }
+    }
+    
+    func alertMsg(title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
