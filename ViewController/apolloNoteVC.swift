@@ -30,6 +30,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var isNoteAvail = false
     var indexPath: Int?
     
+    var noteCategoryName: String = "UnCategory"
     var locationManager: CLLocationManager!
     var noteAudioFileName: String? = nil
     var noteLocationPlace: String = "" {
@@ -216,6 +217,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     note.noteLatitude = noteLocation.latitude
                     note.noteLongitude = noteLocation.longitude
                     note.noteAudio = noteAudioFileName
+//                    note.noteCategory
                     saveNoteData() {
                         
                         let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
@@ -252,6 +254,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                 managedObject!.setValue(noteLocation.latitude, forKey: "noteLatitude")
                 managedObject!.setValue(noteLocation.longitude, forKey: "noteLongitude")
                 managedObject!.setValue(noteAudioFileName, forKey: "noteAudio")
+//                managedObject!.setValue(noteCategoryName, forKey: "noteAudio")
                 
                 do {
                     try context.save()
@@ -320,10 +323,13 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
             destination.noteLocation = self.noteLocation
         }
     }
+    @IBAction func categoryClicked(_ sender: Any) {
+        addCategoryVCInBottonSheet(noteCategoryName)
+    }
     
     @IBAction func audioRecordClicked(_ sender: Any) {
-        addCategoryVCInBottonSheet(nil)
-//        addAudioVCInBottonSheet(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
+       
+        addAudioVCInBottonSheet(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
     }
     
     func addAudioVCInBottonSheet(_ filename: String, _ newRecord: Bool) {

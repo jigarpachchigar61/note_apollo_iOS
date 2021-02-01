@@ -193,10 +193,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-Dw-Gcu">
-                                <rect key="frame" x="104.5" y="457" width="111" height="35"/>
+                                <rect key="frame" x="66.5" y="457" width="187" height="35"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-9D-Pha">
+                                        <rect key="frame" x="0.0" y="1" width="35" height="32.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Fei-QG-hzj"/>
+                                            <constraint firstAttribute="width" constant="35" id="YJs-Lk-a9s"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="folder.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="categoryClicked:" destination="vAq-dH-0Fi" eventType="touchUpInside" id="8jg-aQ-UOK"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8f-Eg-sXv">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="76" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="IDk-zF-n9z"/>
                                             <constraint firstAttribute="width" constant="35" id="ysh-rN-IQ6"/>
@@ -207,7 +218,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmq-Db-xmN">
-                                        <rect key="frame" x="76" y="0.0" width="35" height="35"/>
+                                        <rect key="frame" x="152" y="0.0" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="k20-SD-qas"/>
                                             <constraint firstAttribute="height" constant="35" id="k2W-z3-T7g"/>
@@ -489,6 +500,7 @@
         <image name="cancelIcon" width="16" height="16"/>
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="create" width="16" height="16"/>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="map" width="512" height="512"/>
         <image name="noteimg" width="256" height="256"/>
         <image name="saveIcon" width="16" height="16"/>
