@@ -123,7 +123,6 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteCategory(category: categoryList[indexPath.row])
-            
         }
     }
     
@@ -143,5 +142,37 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in }))
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.isEditing{
+            showEditCategoryAlert(category: categoryList[indexPath.row])
+        }
+    }
+    
+    func updateDataList(){
+        do {
+            try context.save()
+            getCategoryList()
+        } catch {
+            alertMsg(title: "Error", msg: "something went wrong")
+        }
+    }
+    
+    //MARK: - Show alert Box to get updated name of provider
+    func showEditCategoryAlert(category: NoteCategory) {
+        let alert = UIAlertController(title: "Edit Category Name", message: "Enter a text", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = category.name
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            category.name = textField?.text ?? ""
+            self.updateDataList()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in }))
+        
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
