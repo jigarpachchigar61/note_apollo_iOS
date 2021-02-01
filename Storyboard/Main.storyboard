@@ -278,6 +278,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnAudio" destination="q8f-Eg-sXv" id="dVg-Xf-lKA"/>
+                        <outlet property="btnCategory" destination="hR1-9D-Pha" id="kgx-nJ-1os"/>
                         <outlet property="noteImageView" destination="ziH-Jl-oSJ" id="5dQ-42-fdQ"/>
                         <outlet property="notesCategory" destination="pg8-pd-ybZ" id="B92-2r-dfC"/>
                         <outlet property="notesDesc" destination="uTK-De-Rif" id="Jpp-RL-hqI"/>

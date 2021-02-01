@@ -73,6 +73,9 @@ class AudioViewController: UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        noteVC?.bottomSheetClose()
+    }
 }
 
 extension AudioViewController: AVAudioRecorderDelegate{

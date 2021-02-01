@@ -20,6 +20,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     @IBOutlet weak var notesLocation: UITextField!
     @IBOutlet weak var notesCategory: UITextField!
     
+    @IBOutlet weak var btnAudio: UIButton!
+    @IBOutlet weak var btnCategory: UIButton!
+    
     
     var managedObjectContext: NSManagedObjectContext? {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -368,6 +371,13 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         let height = view.frame.height
         let width  = view.frame.width
         bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+        btnAudio.isEnabled = false
+        btnCategory.isEnabled = false
+    }
+    
+    func bottomSheetClose(){
+        btnAudio.isEnabled = true
+        btnCategory.isEnabled = true
     }
     
     func addCategoryVCInBottonSheet(_ selectedCategory: String?) {
@@ -387,6 +397,8 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         let height = view.frame.height
         let width  = view.frame.width
         bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+        btnAudio.isEnabled = false
+        btnCategory.isEnabled = false
     }
     
 }

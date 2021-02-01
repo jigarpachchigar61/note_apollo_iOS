@@ -93,6 +93,10 @@ class CreateChooseCategoryViewController: UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        noteVC?.bottomSheetClose()
+    }
 }
 
 //MARK: - show Category
