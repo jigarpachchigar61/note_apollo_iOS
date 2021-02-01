@@ -221,7 +221,9 @@ class apolloNoteTVC: UITableViewController {
         btnCategory.isEnabled = false
     }
     
-    
+    func bottomSheetClose(){
+        btnCategory.isEnabled = true
+    }
 }
 
 extension apolloNoteTVC: UISearchResultsUpdating {

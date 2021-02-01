@@ -39,6 +39,10 @@ class FilterdCategoryViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        noteTVC?.bottomSheetClose()
+    }
+    
     func prepareBackgroundView(){
         let blurEffect = UIBlurEffect.init(style: .light)
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
