@@ -490,7 +490,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="txtCategoryName" destination="E43-2J-9fd" id="w1I-37-TBc"/>
+                                            <outlet property="txtCategoryName" destination="E43-2J-9fd" id="4wH-zz-FCt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -513,6 +513,9 @@
                             <constraint firstItem="Mcw-q0-PtC" firstAttribute="top" secondItem="tzQ-UV-gZf" secondAttribute="bottom" constant="8" id="x8u-Rn-C3C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="qD8-Ek-MFS" id="dwF-Uq-e2Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Wh-xF-Xtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,9 +17,9 @@ class FilterdCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        getCategoryList()
+        tableView.dataSource = self
+        tableView.delegate = self
+        getCategoryList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,5 +68,42 @@ class FilterdCategoryViewController: UIViewController {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
+    }
+}
+
+//MARK: - show Category
+extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func getCategoryList(){
+        let request: NSFetchRequest<NoteCategory> = NoteCategory.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        do {
+            categoryList = try context.fetch(request)
+            tableView.reloadData()
+        } catch {
+            print("Error loading Category \(error.localizedDescription)")
+        }
+    }
+    
+    func addCategoryInList(name: String){
+        do {
+            let category = NoteCategory(context: context)
+            category.name = name
+            try context.save()
+            getCategoryList()
+        } catch {
+            print("Error loading Category \(error.localizedDescription)")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryViewCell", for: indexPath) as! CategoryViewCell
+        let category = categoryList[indexPath.row]
+        cell.initCell(name: category.name ?? "")
+        return cell
     }
 }
