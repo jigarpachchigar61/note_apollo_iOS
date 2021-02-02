@@ -107,7 +107,27 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         
         notesTitle.bottomBorder()
         
+        
     }
+    
+    //MARK: - For hiding keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //MARK: - Textfield should return
+         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return false
+    
+        }
+    
+//    //MARK: - for pressing return key
+//    func textFieldShouldReturn(_ textField:UITextField) -> Bool{
+//
+//        notesTitle.resignFirstResponder()
+//        return (true)
+//    }
     
     // Check Image Button Press
     @IBAction func ChkImgBtnPress(_ sender: Any) {
@@ -275,8 +295,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     
                     if isPresentingInAddFluidPatientMode {
                         self.dismiss(animated: true, completion: {
-                            self.vcCallback?()
                             
+                            self.vcCallback?()
+
                         })
                         
                     } else {
@@ -335,12 +356,6 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         
     }
     
-    //MARK: - textfield should return
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-        
-    }
     
     //MARK: - pass data between screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
