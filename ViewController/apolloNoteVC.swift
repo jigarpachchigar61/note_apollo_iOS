@@ -27,7 +27,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
     var managedObjectContext: NSManagedObjectContext? {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
-    
+    var vcCallback : (() -> Void)?
     var notesResFetch: NSFetchedResultsController<Note>!
     var notesArr = [Note]()
     var note: Note?
@@ -233,7 +233,9 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                         let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
                         
                         if isPresentingInAddFluidPatientMode {
-                            self.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: true, completion: {
+                                self.vcCallback?()
+                            })
                             
                         }
                         
@@ -272,7 +274,10 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
                     let isPresentingInAddFluidPatientMode = self.presentingViewController is UINavigationController
                     
                     if isPresentingInAddFluidPatientMode {
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true, completion: {
+                            self.vcCallback?()
+                            
+                        })
                         
                     } else {
                         self.navigationController?.popViewController(animated: true)

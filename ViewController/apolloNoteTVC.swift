@@ -192,12 +192,26 @@ class apolloNoteTVC: UITableViewController {
                 noteDetailsViewController.isNoteAvail = false
                 noteDetailsViewController.note = selectedNote
                 
+                noteDetailsViewController.vcCallback = {
+                    self.retrieveNotes()
+                }
             }
             
         }
             
         else if segue.identifier == "addItem" {
             print("New note added")
+            
+            if let naVC  = segue.destination as? UINavigationController,
+               let noteDetailVC = naVC.viewControllers.first as? apolloNoteVC
+            
+            {
+                noteDetailVC.isNoteAvail = false
+                noteDetailVC.vcCallback = {
+                    self.retrieveNotes()
+                }
+            }
+            
             
         }
         
@@ -256,6 +270,7 @@ extension apolloNoteTVC: UISearchResultsUpdating, UISearchBarDelegate {
         // Make the search bar always visible.
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
     func updateSearchResults(for searchController: UISearchController) {
         searchText = searchController.searchBar.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         retrieveNotes()
