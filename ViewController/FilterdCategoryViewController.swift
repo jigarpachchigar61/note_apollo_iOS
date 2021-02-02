@@ -130,7 +130,7 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
             try context.save()
             getCategoryList()
         } catch {
-            alertMsg(title: "Error", msg: "Either Category contains notes or something went wrong")
+            alertMsg(title: "Error", msg: "Category contains notes so can't delete this category")
         }
     }
     

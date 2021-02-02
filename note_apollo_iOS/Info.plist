@@ -22,6 +22,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>We need to access your Camera.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needed permission to save note location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Needed permission for record audio note</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need access to your Photo Library.</string>
 	<key>UIApplicationSceneManifest</key>
@@ -56,13 +60,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Needed permission for record audio note</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needed permission to save note location</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
