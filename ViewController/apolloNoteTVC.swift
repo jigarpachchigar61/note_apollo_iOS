@@ -102,7 +102,7 @@ class apolloNoteTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         
-        let delete = UITableViewRowAction(style: .destructive, title: "  ") { (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             
             let note = self.notesArr[indexPath.row]
             context.delete(note)
@@ -121,7 +121,8 @@ class apolloNoteTVC: UITableViewController {
 
         }
         
-        delete.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "trashIcon"))
+      //  delete.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "trashIcon"))
+    
         
         return [delete]
 
