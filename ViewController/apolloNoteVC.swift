@@ -369,6 +369,7 @@ class apolloNoteVC: UIViewController, UITextFieldDelegate,  UINavigationControll
         addCategoryVCInBottonSheet(noteCategoryName)
     }
     
+    // Audio recording
     @IBAction func audioRecordClicked(_ sender: Any) {
         addAudioVCInBottonSheet(noteAudioFileName ?? String(note?.id.hashValue ?? 0), noteAudioFileName == nil)
     }

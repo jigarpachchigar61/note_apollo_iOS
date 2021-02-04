@@ -194,7 +194,9 @@ class apolloNoteTVC: UITableViewController {
                 noteDetailsViewController.note = selectedNote
                 
                 noteDetailsViewController.vcCallback = {
-                    self.retrieveNotes()
+                  //  self.retrieveNotes()
+                    self.retrieveCategory()
+
                 }
             }
             
@@ -209,7 +211,8 @@ class apolloNoteTVC: UITableViewController {
             {
                 noteDetailVC.isNoteAvail = false
                 noteDetailVC.vcCallback = {
-                    self.retrieveNotes()
+                   // self.retrieveNotes()
+                    self.retrieveCategory()
                 }
             }
             

@@ -24,6 +24,7 @@ class FilterdCategoryViewController: UIViewController {
         getCategoryList()
     }
     
+    // MARK: - bottom sheet
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
@@ -70,11 +71,14 @@ class FilterdCategoryViewController: UIViewController {
         return false
     }
     
+    
     @IBAction func closeClicked(_ sender: Any) {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
     }
+    
+    // MARk: - category name edit
     @IBAction func editClicked(_ sender: Any) {
         tableView.setEditing(!tableView.isEditing, animated: true)
         if tableView.isEditing {
@@ -124,6 +128,7 @@ extension FilterdCategoryViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    //MARK: - delete category from list
     func deleteCategory(category: NoteCategory){
         context.delete(category)
         do {

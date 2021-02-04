@@ -29,6 +29,7 @@ class AudioViewController: UIViewController {
         initRecord()
     }
     
+    //MARK: - nottomsheet
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
@@ -56,10 +57,12 @@ class AudioViewController: UIViewController {
         view.insertSubview(bluredView, at: 0)
     }
     
+    // for record
     @IBAction func btnRecordClicked(_ sender: Any) {
         recordTapped()
     }
     
+    // play gain
     @IBAction func btnPlaybackClicked(_ sender: Any) {
         playBackTapped()
     }
