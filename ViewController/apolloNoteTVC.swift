@@ -116,7 +116,7 @@ class apolloNoteTVC: UITableViewController {
                 print("Sorry! Could't Delete Note.")
             }
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
+          //  tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
 
         }
